@@ -1,34 +1,116 @@
 
-body{
-    background-image: url("../images/fast_foods.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; 
-    font-family: Tahoma, sans-serif;
-}
-
 .logo{
 font-family: 'Lobster', cursive;
 font-size: 33px;
+margin-left: 30px;
 }
+
+.quicklinks{
+    display: flex;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 0%;   
+}
+
+.quicklinks a {
+    color: grey;
+    text-decoration: none;
+}
+
+.quicklinks a:hover {
+    color: grey;
+    text-decoration: block;
+}
+
+
+.desc {
+    color: grey;
+    margin-right: 600px;
+    margin-left: 90px;
+}
+
+.quicklinks:last-child {
+    margin-left: 500px;
+}
+
+.links{
+    margin-left: 200px;
+}
+
 
 nav{
     width: 100%;
     background-color: #f2f2f2;
     padding: 10px;
     display: grid;
+    margin-top: 10px;
     grid-template-columns:100px 500px 1000px;
     grid-column-gap: 300px;
 
 }
 
+
 nav input{
     margin-top: 10px;
     height: 30px;
     width: 100%;
+    margin-right: 0%;
+    padding-right: 0%;
 }
 
+nav button{
+    background-color: white;
+    height: 30px;
+    
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px !important;
+    margin: 100px;
+    height: 300px;
+}
+
+.banner img{
+    background-position: top;
+    background-repeat: repeat-x;
+    background-size: cover;
+    height: inherit;
+    margin-bottom: 0% !important; 
+}
+
+.body-container{
+    display: flex;
+    margin-top: 3%;
+}
+
+.category{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.category button{
+padding: 8px 20px;
+background:#f2f2f2;
+color: black;
+font-size: 14px;
+letter-spacing: .09em;
+border: 1px solid white;
+border-radius:0px;
+width: 200px;
+margin-bottom: 40px;
+max-height: 50px;
+}
+
+.cat{
+    
+    display: flex;
+    justify-content: center;
+
+    
+}
 .auth-container{
     display: grid;
     box-shadow: 0 4px 8px 0 black;
@@ -71,10 +153,14 @@ nav input{
 }
 
 form input{
-    background-color: rgb(250, 255, 189);
+    background-color: white;
     width: 80%;
     height: 30px;
     overflow: visible;
+}
+
+form input:focus{
+    background-color: rgb(250, 255, 189);
 }
 
 
@@ -82,3 +168,45 @@ form input{
     font-size: 24px;
 }
 
+.product-list-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 3%;
+
+}
+
+.product-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
+   margin-top: 0% !important;
+   margin: 8px;
+   height: inherit;
+   cursor: pointer;
+   font-weight: 44px;
+   font-size: 20px;
+   color: gray;
+
+}
+
+.product-container button{
+    display: none;
+}
+
+.product-container:hover {
+    box-shadow: 0 2px 4px 0 grey, 0 4px 5px 0 grey, 0 1px 10px 0 gray;
+    
+}
+
+.product-container:hover button{
+    display: inline-block;
+    background-color: orange;
+    width: 200px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    height: 40px;
+    cursor: pointer;
+}

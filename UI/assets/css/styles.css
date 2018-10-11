@@ -1,32 +1,57 @@
 
 body{
-    background-image: url("../images/fast_foods.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; 
-    font-family: Tahoma, sans-serif;
+    margin: 0;
+    background-color:#f2f2f2;
 }
 
 .logo{
-font-family: 'Lobster', cursive;
-font-size: 33px;
+    font-family: 'Lobster', cursive;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 33px;
+    color: white;
 }
 
 nav{
     width: 100%;
-    background-color: #f2f2f2;
-    padding: 10px;
+    max-width: 100%;
+    background-color: #2bb673;
+    margin-top: 0%;
+    grid-area: header;
     display: grid;
-    grid-template-columns:100px 500px 1000px;
-    grid-column-gap: 300px;
+    grid-template-columns:100px 500px 500px;
+    grid-column-gap: 300px; 
+    grid-template-rows: 70px;
 
 }
 
+nav .fas{
+    color: white;
+    margin-left: 50px;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
 nav input{
-    margin-top: 10px;
+    margin-top: 25px;
     height: 30px;
     width: 100%;
+    background-color: white;
+}
+
+nav button{
+    background-color: white;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.front-align{
+    display: flex;
+}
+
+.prof{
+    margin-top:25px;
+    cursor: pointer;
 }
 
 .auth-container{
@@ -38,7 +63,6 @@ nav input{
     grid-template-columns: 50% 50%; 
     margin: 5% auto;
 }
-
 
 .form-container{
     background-color:#f2f2f2;
@@ -71,14 +95,164 @@ nav input{
 }
 
 form input{
-    background-color: rgb(250, 255, 189);
+    background-color: white;
     width: 80%;
     height: 30px;
     overflow: visible;
 }
-
+form input:focus{
+    background-color: rgb(250, 255, 189);
+}
 
 .lead{
     font-size: 24px;
 }
 
+.container {
+    
+    display: grid;
+    grid-template-columns: 20% 70%;
+    grid-column-gap: 0%;
+    margin-top: 40px;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column; 
+    width: 200px;
+    height: 100%;
+    margin-top: 100px;
+   
+}
+
+
+.sidebar i{
+    color: gray;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.sidebar i:hover{
+  color: #2bb673;
+}
+
+.side-item{
+    margin-left: 50px;
+}
+.content-container{
+    margin: 0%;
+    
+}
+
+.head-actions{
+    display: flex;
+    flex-direction: row;
+    align-items: flext-start; 
+    margin: 0%;
+}
+.head-actions button{
+    background-color: #03a9f4;
+    color: white;
+    font-size: 16px;
+    margin-left: 600px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+}
+
+.table-list{
+    background-color: white;    
+    box-shadow: black;
+    transition: 0.3s;
+    box-sizing: border-box;
+    display: flex;
+    width: 90%;
+    flex-grow: 1;
+    flex-direction:column;
+    flex-shrink: inherit;
+    border-radius: 10px;
+}
+
+.table-list ul{
+    
+    padding:8px 2px;
+    text-align: left;
+    vertical-align: inherit;
+    width: 100%;
+}
+
+.table-list .th{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 10% 20% 40% 10% 10% 10%;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+.table-list .td{
+    display: grid;
+    width: 100%;
+    height: 40px;
+    grid-template-columns: 10% 20% 40% 10% 10% 10%;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+
+.table-list .tr{
+    display: flex;
+    height: 10px;
+    margin-left: 90%;
+   
+}
+
+.tr button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-block; 
+    background: transparent;
+    border-color:  transparent;  
+
+}
+
+.tr button:hover{
+    background: transparent;
+    background-color:#f2f2f2;
+}
+
+.table-list .td b{
+    color: #616161;
+    font-size: 0.8125rem;
+    font-weight: 400;
+}
+
+.table-list img{
+
+    height: 40px;
+    
+}
+
+.wrapper{
+    color: #bdbdbd;
+    border: 1px solid #eaeaea;
+    padding: 4px;
+    background: none;
+    border-radius: 2px;
+    margin-bottom: 10%;
+    margin-left: 20px
+}
+
+table{
+    width: 100%;
+    display: table;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border-spacing: 0;
+    border-collapse: collapse;
+    padding-left: 5px;
+}
+
+td, th{
+    display: table-cell;
+    padding: 4px 24px 4px 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+   
+}

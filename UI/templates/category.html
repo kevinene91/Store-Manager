@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+	<title>Store Manager | Categories </title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="front-align">
+        <i class="fas fa-align-justify fa-2x"></i>
+        <div class="logo"> BigSale</div>
+        </div>
+        <form>
+
+        <input type="text" placeholder="Search for a product">
+        <button><img src="../assets/images/search.png"></button>
+        </form>
+        <img class="prof" src="../assets/images/prof.svg">
+       
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="side-item">
+                <i class="fas fa-home fa-x"> <b>Dashboard</b></i> 
+            </div>
+            <div class="side-item">
+                <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> 
+            </div>
+
+            <div class="side-item">
+                <i class="fab fa-product-hunt fa-x"> <b>Categories</b></i> 
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="head-actions">
+            <h3> Category </h3>
+            <a class="btn-left" href="category_add.html"><button>
+                Add Category
+            </button></a>
+            </div>
+
+            <div class="table-list">
+                <table>
+                    <ul></ul>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>No. of Products</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="detail">
+                            <td></td>
+                            <td>Books</td>
+                            <td>10</td> 
+                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                            
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Education</td>
+                            <td>10</td> 
+                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Apparel</td>
+                            <td>10</td> 
+                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+                <ul>
+                        <div class="tr">
+                        <button><i class="fas fa-angle-left"></i></button>
+                          <button><i class="fas fa-angle-right"></i></button>
+                        </div>
+                </ul> 
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+<script src="../assets/js/app.js"> </script>
+</html>

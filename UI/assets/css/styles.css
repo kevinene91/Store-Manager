@@ -338,7 +338,47 @@ td i{
     border-width: 0 0 1px;
     border-color: black;
     width: 70%;
+   
 }
+
+.table-list input{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    width: 70%;
+    margin-left: 40px;
+}
+
+.table-list label{
+    margin-left: 40px;
+}
+
+.table-list input:focus{
+    outline: 0;
+    border-width: 0 0 2px;
+    background-color: white !important;
+    border-color:#2bb673;
+} 
+
+.table-list textarea{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    width: 85%;
+    height: 100%;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.table-list textarea:focus{
+    display: flex;
+    flex-grow: inherit;
+    outline: 0;
+    border-width: 0 0 2px;
+    background-color: white !important;
+    border-color:#2bb673;
+}
+
 
 .endbar-item select{
     outline: 0;
@@ -370,7 +410,7 @@ td i{
     border-width: 0 0 2px;
     background-color: white !important;
     border-color:#2bb673;
-}
+}  
 
 .card-list textarea{
     outline: 0;
@@ -416,7 +456,7 @@ td i{
     color: #2bb673;
 }
 
-.endbar-item .save{
+.save{
     color: white;
     background-color: #03a9f4;
     width: 150px;
@@ -426,7 +466,7 @@ td i{
 }
 
 
-.endbar-item .Delete{
+.Delete{
     color: white;
     background-color: red;
     width: 150px;
@@ -435,7 +475,7 @@ td i{
 
 }
 
-.endbar-item .cancel{
+.cancel{
     color: black;
     background-color:#f2f2f2;
     width: 150px;

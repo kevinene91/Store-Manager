@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+	<title>Store Manager | add-product </title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="front-align">
+        <i class="fas fa-align-justify fa-2x"></i>
+        <div class="logo"> BigSale</div>
+        </div>
+        <form>
+
+        <input type="text" placeholder="Search for a product">
+        <button><img src="../assets/images/search.png"></button>
+        </form>
+        <img class="prof" src="../assets/images/prof.svg">
+       
+    </nav>
+
+    
+    <div class="card-container">
+        <div class="sidebar">
+            <div class="side-item">
+                <i class="fas fa-home fa-x"> <b>Dashboard</b></i> 
+            </div>
+            <div class="side-item">
+                <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> 
+            </div>
+
+            <div class="side-item">
+                <i class="fab fa-product-hunt fa-x"> <b>Categories</b></i> 
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="head-actions">
+            <div class="head-arrow">
+            <a href="products.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
+            </div>
+             <h3 class="head-left">Edit Product</h3>
+            </div>
+        <form >
+            <div class="card-list">
+                <ul>
+                 <h3> Information</h3> 
+                </ul>              
+
+                <ul>
+                    <label>Name</label>
+                </ul>
+                <ul>
+                    <input type="text" value="Django for beginners">
+                </ul>
+
+                 <ul>
+                    <label>Description</label>
+                </ul>
+                
+                    <textarea class="expand" placeholder="A step-by-step guide to building web applications with Python and Django 2.1."></textarea>
+                
+        
+            </div>
+
+            <div class="card-list">
+                 <ul>
+                 <h3> Images</h3> 
+                 </ul>
+                 <ul>
+                    <label for="file-upload" class="custom-file">
+                    <i class="fas fa-upload"></i>
+                    Choose a file</label>
+                     <input type="file" id="file-upload" multiple>
+                </ul>
+                
+                <ul>
+                    <img  src="../assets/images/book.jpg">
+                </ul>
+            </div>
+        
+
+            <div class="card-list">
+                <ul>
+                    <h3>Price</h3>
+                </ul>
+
+                <ul>
+                    <label>Price</label>
+                    </ul>
+                    <ul>
+                        $<input type="number"  value="99.99">USD
+                    </ul>
+            </div>
+        </div>
+        <div class="endbar">
+            <div class="endbar-item">
+               <ul> <h3>Properties of </h3> </ul>
+               <ul>
+                    <label>Categories</label>
+                </ul>
+                <ul>
+                <select>
+                   <option value="">Books</option>
+                    <option value="">Electronics</option>
+                    <option value="">Apparell</option>
+                    <option value="">Books</option>
+                    <option value="">Groceries</option>
+                    <option value="">Accesories</option>
+                </select>
+                </ul>
+
+                <ul>
+                    <label>Quantity</label>
+                    </ul>
+                    <ul>
+                        <input type="number" value="1">Psc.
+                    </ul>
+            </div>
+            <div class="endbar-item">
+
+                <ul>
+                    <h3>Save Product</h3>
+                </ul>
+                <ul>
+                    <button class="cancel">cancel</button>
+                </ul>
+
+                 <ul>
+                    <button class="Delete">Delete</button>
+                </ul>
+
+                <ul>
+                    <button class="save">Save Changes</button>
+                </ul>
+
+               
+
+            </form>
+            </div>
+    </div>
+    </div>
+
+   
+
+    </form>
+    
+</body>
+<script src="../assets/js/app.js"> </script>
+
+</html>

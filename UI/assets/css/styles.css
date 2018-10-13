@@ -195,6 +195,7 @@ form input:focus{
 }
 
 
+
 .table-list .tr{
     display: flex;
     height: 10px;
@@ -316,6 +317,43 @@ td i{
     border-color: black;
     width: 70%;
 }
+
+.sales-card-list{
+    background-color: white;    
+    box-shadow: black;
+    transition: 0.3s;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction:column;
+    flex-shrink: inherit;
+    border-radius: 10px;;
+
+}
+
+.sale-form{
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.sale-form button{
+
+    margin-left: 90%;
+}
+
+.save-sale{
+    color: white;
+    background-color: #03a9f4;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left:45%
+
+}
+
 
 .card-list{
     background-color: white;    
@@ -494,5 +532,9 @@ input[type="file"] {
     cursor: pointer;
 }
 
+.card{
+    display: flex;
+    flex-direction: column;
 
+}
 

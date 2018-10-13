@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+	<title>Store Manager | Sales Add </title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="front-align">
+        <i class="fas fa-align-justify fa-2x"></i>
+        <div class="logo"> BigSale</div>
+        </div>
+        <form>
+
+        <input type="text" placeholder="Search for a product">
+        <button><img src="../assets/images/search.png"></button>
+        </form>
+        <img class="prof" src="../assets/images/prof.svg">
+       
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="side-item">
+               <a href="products.html"> <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> </a>
+            </div>
+
+            <div class="side-item">
+               <a href="category.html"> <i class="fab fa-product-hunt fa-x"> <b>Categories</b></i></a>
+            </div>
+
+            <div class="side-item">
+               <a href="sales.html"> <i class="fab fa-product-hunt fa-x"> <b>Sales</b></i></a>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="head-actions">
+              <div class="head-arrow">
+            <a href="sales.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
+            </div>
+             <h3 class="head-left">New Sale</h3>
+            </div>
+
+            <div class="sales-card-list">
+
+                <form class="sale-form">
+                    <ul><label>sales No. <label> 
+                    <input type="text" value="100">
+                    </ul>
+
+                    <ul><label>Datetime <label> 
+                    <input type="date">
+                    </ul>
+                  
+                    <ul>
+                    <label>Quantity</label>
+                    <input type="number">
+                    </ul>
+
+                     <ul>
+                    <label>Customer</label>
+                    <input type="text">
+                    </ul>
+
+                    <ul>
+                    <button class="save">Add Item</button>
+                    <ul>
+                <form>                                                                                                                                                                      
+            </div>
+
+
+              <div class="sales-card-list">
+
+                <form class="sale-form">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>product ID</th>
+                            <th>product Name</th>
+                            <th>Quantity</th>
+                            <th>unit price</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        <tr>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>#1</td>
+                                <td>Django Book</td>
+                                <td>4</td>
+                                <td>100</td>
+                                <td>400.00</td>
+                                <td><i class="fas fa-trash-alt"></i></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>#2</td>
+                                <td>Shirt</td>
+                                <td>2</td>
+                                <td>600</td>
+                                <td>1200.00</td>
+                                <td><i class="fas fa-trash-alt"></i></td>
+                            </tr>
+                        <tbody>
+                    </table>
+                    <hr>
+                    <ul>
+                     <button class="save-sale">complete Sale</button>
+                    </ul>
+                    
+                <form>                                                                                                                                                                      
+            </div>
+    </div>
+    
+</body>
+<script src="../assets/js/app.js"> </script>
+</html>

@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-	<title>Store Manager | Categories-edit </title>
+	<title>Store Manager | UserProfile </title>
 </head>
 
 <body>
@@ -25,9 +25,10 @@
        
     </nav>
 
-    <div class="container">
+    
+    <div class="card-container">
         <div class="sidebar">
-            <     <div class="side-item">
+                <div class="side-item">
                <a href="products.html"> <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> </a>
             </div>
 
@@ -38,42 +39,59 @@
             <div class="side-item">
                <a href="sales.html"> <i class="fab fa-product-hunt fa-x"> <b>Sales</b></i></a>
             </div>
-
-            <div class="side-item">
-               <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
-            </div>
         </div>
         <div class="content-container">
             <div class="head-actions">
-              <div class="head-arrow">
-            <a href="category.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
+            <div class="head-arrow">
+            <a href="products.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
             </div>
-             <h3 class="head-left">Edit Category</h3>
+             <h3 class="head-left">Profile</h3>
             </div>
+        <form >
+            <div class="card-list">
+           
+                <ul>
+                 <h3> Information</h3> 
+                  <div class="sale-form">
+                 <ul><img  src="../assets/images/prof.svg"></ul>
+                
+                <ul><label>Name</label><p>Kevin Munene</p></ul>
 
-            <div class="table-list">
+                 <ul><label>Email</label><p>munenedeveloper@gmail.com</p></ul>
+                
 
-              <form>
-                    <ul>
-                    <label>Name</label>
-                    </ul>
-                    <ul>
-                    <input type="text" value="Books">
-                    </ul>
-                    <ul>
-                    <label>Description</label>
-                    </ul>
-                    <ul>
-                    <textarea class="expand" placeholder="This Category all products that qualify as books inluding magazines and Journals"></textarea>
-                    </ul>
+                 <ul>
+                    <label>Role</label><p>Store Attenant</p></ul>
+                </ul>
+                
+                </div>
+        
+            
+
+        </div>
+        <div class="endbar">
+            <div class="endbar-item">
+               <ul> <h3>Summary </h3> </ul>
+               <ul>
+                    <label>Total Sales</label><p>400</p>
+                </ul>
+                <ul>
+                    <label>Products Sold</label><p>700</p>
+                </ul>
+
+                <ul>
+                     <label>Total Worth of Goods</label><p>$ 7000.00</p>
+                </ul>
             </div>
-                <hr>
-                    <button class="cancel">Cancel</button>
-                    <button class="save">Save</button> 
-            </form>                                                                                                                                                                                
-            </div>
+        
+    
     </div>
+
+   
+
+    </form>
     
 </body>
 <script src="../assets/js/app.js"> </script>
+
 </html>

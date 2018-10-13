@@ -338,6 +338,16 @@ td i{
     grid-template-columns: 50% 50%;
 
 }
+.prof-pic{
+    width: 120px;
+    height: 120px;
+    display: grid;
+    align-items: center;
+    border-radius: 100%;
+    justify-content: center;
+    background-color: #5AB378;
+}
+
 
 .sale-form button{
 

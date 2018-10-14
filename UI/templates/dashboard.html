@@ -6,12 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-	<title>Store Manager | UserProfile </title>
+	<title>Store Manager | Categories </title>
 </head>
 
 <body>
 
- <nav>
+   <nav>
         <div class="front-align">
         <i class="fas fa-align-justify fa-2x"></i>
         <div class="logo"> BigSale</div>
@@ -32,10 +32,9 @@
        
     </nav>
 
-    
-    <div class="card-container">
-        <div class="sidebar">
-         <div class="side-item">
+    <div class="container">
+           <div class="sidebar">
+            <div class="side-item">
                <a href="dashboard.html"><i class="fas fa-home fa-x"> <b>Dashboard</b></i></a>
             </div>
             <div class="side-item">
@@ -56,59 +55,63 @@
             <div class="side-item">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
-        </div>
-        <div class="content-container">
-            <div class="head-actions">
-            <div class="head-arrow">
-            <a href="products.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
-            </div>
-             <h3 class="head-left">Profile</h3>
-            </div>
-        <form >
-            <div class="card-list">
-           
+
+
+        </div>                                                                                                                                                                                                                                                                                                                                                                                          
+        <div class="dash">
+            <div class="dash-items products">
                 <ul>
-                 <h3> Information</h3> 
-                  <div class="sale-form">
-                 <ul><img  src="../assets/images/prof.svg"></ul>
-                
-                <ul><label>Name</label><p>Kevin Munene</p></ul>
-
-                 <ul><label>Email</label><p>munenedeveloper@gmail.com</p></ul>
-                
-
-                 <ul>
-                    <label>Role</label><p>Store Attenant</p></ul>
+                <i class="fab fa-product-hunt fa-3x"></i> 
                 </ul>
-                
+                <div class="info">
+                    <a href="products.html"><h3>Products</h3></a>
+                    <p>CRUD operations for produtcs</p>
                 </div>
-        
-            
 
-        </div>
-        <div class="endbar">
-            <div class="endbar-item">
-               <ul> <h3>Summary </h3> </ul>
-               <ul>
-                    <label>Total Sales</label><p>400</p>
-                </ul>
-                <ul>
-                    <label>Products Sold</label><p>700</p>
-                </ul>
-
-                <ul>
-                     <label>Total Worth of Goods</label><p>$ 7000.00</p>
-                </ul>
             </div>
-        
-    
+            <div class="dash-items">
+                <ul>
+               <i class="fas fa-briefcase fa-3x"></i>
+                </ul>
+                <div class="info">
+                   <a href="category.html"> <h3>Category</h3></a>
+                    <p>CRUD operations for categories</p>
+                </div>
+
+            </div>
+            <div class="dash-items">
+                <ul>
+               <i class="far fa-money-bill-alt fa-3x"></i> 
+                </ul>
+                <div class="info">
+                    <a href="sales.html"><h3>Sales</h3></a>
+                    <p>CRUD operations for Sales</p>
+                </div>
+
+            </div>
+
+            <div class="dash-items">
+                <ul>
+                <i class="fas fa-users fa-3x"></i> 
+                </ul>
+                <div class="info">
+                    <a href="users.html"><h3>Users</h3></a>
+                    <p>CRUD operations for users</p>
+                </div>
+
+            </div>
+
+               <div class="dash-items">
+                <ul>
+                <i class="fas fa-user fa-3x"></i> 
+                </ul>
+                <div class="info">
+                    <a href="userprofile.html"><h3>Profile</h3></a>
+                    <p>User's Profile</p>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-   
-
-    </form>
-    
-</body>
-<script src="../assets/js/app.js"> </script>
-
-</html>
+    </body>

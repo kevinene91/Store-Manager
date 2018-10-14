@@ -11,4 +11,3 @@ function resize() {
   }, 0);
 }
 
-

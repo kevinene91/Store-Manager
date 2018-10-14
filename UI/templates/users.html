@@ -6,12 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-	<title>Store Manager | Categories </title>
+	<title>Store Manager | Users </title>
 </head>
 
 <body>
 
-   <nav>
+ <nav>
         <div class="front-align">
         <i class="fas fa-align-justify fa-2x"></i>
         <div class="logo"> BigSale</div>
@@ -34,7 +34,10 @@
 
     <div class="container">
         <div class="sidebar">
-                 <div class="side-item">
+            <div class="side-item">
+                <i class="fas fa-home fa-x"> <b>Dashboard</b></i> 
+            </div>
+            <div class="side-item">
                <a href="products.html"> <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> </a>
             </div>
 
@@ -45,42 +48,69 @@
             <div class="side-item">
                <a href="sales.html"> <i class="fab fa-product-hunt fa-x"> <b>Sales</b></i></a>
             </div>
+
             <div class="side-item">
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
             <div class="side-item">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
+
+
         </div>
         <div class="content-container">
             <div class="head-actions">
-              <div class="head-arrow">
-            <a href="category.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
-            </div>
-             <h3 class="head-left">New Category</h3>
+            <h3> Users </h3>
+            <a class="btn-left" href="create_attendant.html"><button>
+                Add Users
+            </button></a>
             </div>
 
             <div class="table-list">
+                <table>
+                    <ul></ul>
+                    
+                        <tr>
+                            <th></th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>Grace</td>
+                            <td>grace@yahoo.com</td> 
+                            <td>Store Attendant</td>
+                            <td><a href="#"><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                            
+                        </tr>
+                       <tr>
+                            <td></td>
+                            <td>Daniel</td>
+                            <td>daniel@yahoo.com</td> 
+                            <td>Store Attendant</td>
+                            <td><a href="#"><i class="fas fa-edit"></i></a></td>
+                            <td><i class="fas fa-trash-alt"></i></td>
+                            
+                        </tr>
+                      
+                    </tbody>
+                </table>
+                <ul>
+                        <div class="tr">
+                        <button><i class="fas fa-angle-left"></i></button>
+                          <button><i class="fas fa-angle-right"></i></button>
+                        </div>
+                </ul> 
+            </div>
+        </div>
 
-              <form>
-                    <ul>
-                    <label>Name</label>
-                    </ul>
-                    <ul>
-                    <input type="text">
-                    </ul>
-                    <ul>
-                    <label>Description</label>
-                    </ul>
-                    <ul>
-                    <textarea class="expand"></textarea>
-                    </ul>
-            </div>
-                <hr>
-                    <button class="cancel">Cancel</button>
-                    <button class="save">Save</button> 
-            </form>                                                                                                                                                                                
-            </div>
     </div>
     
 </body>

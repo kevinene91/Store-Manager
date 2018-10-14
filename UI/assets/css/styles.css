@@ -19,7 +19,7 @@ nav{
     margin-top: 0%;
     grid-area: header;
     display: grid;
-    grid-template-columns:100px 500px 500px;
+    grid-template-columns:100px 500px 10px;
     grid-column-gap: 300px; 
     grid-template-rows: 70px;
 
@@ -50,8 +50,9 @@ nav button{
 }
 
 .prof{
-    margin-top:25px;
+    margin-top:15px;
     cursor: pointer;
+    width: 50px;
 }
 
 .auth-container{
@@ -436,6 +437,29 @@ td i{
     background-color: transparent;
 }
 
+.sale-form select{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    width: 70%;
+    background-color: transparent;
+}
+
+.sale-form input:focus{
+    outline: 0;
+    border-width: 0 0 2px;
+    background-color: white !important;
+    border-color:#2bb673
+}
+
+.sale-form input{
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: black;
+    width: 70%;
+    margin-left: 40px;
+}
+
 .endbar-item select:focus{
     outline: 0;
     border-width: 0 0 2px;
@@ -547,4 +571,35 @@ input[type="file"] {
     flex-direction: column;
 
 }
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
 

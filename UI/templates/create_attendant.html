@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-	<title>Store Manager | Categories </title>
+	<title>Store Manager | Add User </title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 
     <div class="container">
         <div class="sidebar">
-                 <div class="side-item">
+            <div class="side-item">
                <a href="products.html"> <i class="fab fa-product-hunt fa-x"> <b>Products</b></i> </a>
             </div>
 
@@ -45,42 +45,61 @@
             <div class="side-item">
                <a href="sales.html"> <i class="fab fa-product-hunt fa-x"> <b>Sales</b></i></a>
             </div>
+
             <div class="side-item">
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
+
             <div class="side-item">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
+            
         </div>
         <div class="content-container">
             <div class="head-actions">
               <div class="head-arrow">
-            <a href="category.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
+            <a href="users.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
             </div>
-             <h3 class="head-left">New Category</h3>
+             <h3 class="head-left">New User</h3>
             </div>
 
-            <div class="table-list">
+            <div class="sales-card-list">
 
-              <form>
-                    <ul>
-                    <label>Name</label>
+                <form class="sale-form">
+                    <ul><label>username <label> 
+                    <input type="text" >
                     </ul>
-                    <ul>
-                    <input type="text">
+
+                    <ul><label>email<label> 
+                    <input type="email">
                     </ul>
+                  
                     <ul>
-                    <label>Description</label>
+                    <label>password</label>
+                    <input type="password">
                     </ul>
+
+                     <ul>
+                    <label>confirm</label>
+                    <input type="password">
+                    </ul>
+
                     <ul>
-                    <textarea class="expand"></textarea>
+                    <label>user role</label>
+                    <select>
+                    <option>Select role</option>
+                    <option value="1">Attendant</option>
+                    <option value="2">Admin</option>
+                    </select>
                     </ul>
+                    <ul></ul>
+                    <ul>
+                    <button class="save">Add Item</button>
+                    <ul>
+                <form>                                                                                                                                                                      
             </div>
-                <hr>
-                    <button class="cancel">Cancel</button>
-                    <button class="save">Save</button> 
-            </form>                                                                                                                                                                                
-            </div>
+
+
     </div>
     
 </body>

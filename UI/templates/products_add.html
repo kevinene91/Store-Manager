@@ -10,9 +10,10 @@
 </head>
 
 <body>
- <nav>
+
+     <nav>
         <div class="front-align">
-        <i class="fas fa-align-justify fa-2x"></i>
+        <i class="fas fa-align-justify fa-2x" onclick="shownav()"></i>
         <div class="logo"> BigSale</div>
         </div>
         <form>
@@ -168,6 +169,16 @@
     </form>
     
 </body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closenav()">&times;</a>
+ 
+  <a href="dashboard.html">Dashboard</a>
+  <a href="products.html">Products</a>
+  <a href="category.html">Categories</a>
+  <a href="sales.html">Sales</a>
+  <a href="userprofile.html">Profile</a>
+  <a href="users.html">Users</a>
+</div>
 <script src="../assets/js/app.js"> </script>
 
 </html>

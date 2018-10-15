@@ -12,7 +12,7 @@
 <body>
  <nav>
         <div class="front-align">
-        <i class="fas fa-align-justify fa-2x"></i>
+        <i class="fas fa-align-justify fa-2x" onclick="shownav()"></i>
         <div class="logo"> BigSale</div>
         </div>
         <form>
@@ -52,6 +52,9 @@
             <div class="side-item">
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
+              <div class="side-item">
+               <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
+            </div>
             <div class="side-item">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
@@ -61,7 +64,7 @@
             <div class="head-arrow">
             <a href="products.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
             </div>
-             <h3 class="head-left">Edit Product</h3>
+             <h3 class="head-left">Product Detail</h3>
             </div>
         <form >
             <div class="card-list">
@@ -70,33 +73,25 @@
                 </ul>              
 
                 <ul>
-                    <label>Name</label>
-                </ul>
-                <ul>
-                    <input type="text" value="Django for beginners">
-                </ul>
-
+                    <p class="title">Name</p>
+                     <p>Django Book Fifth Edition</p>
+                </ul>  
+                   
+                
                  <ul>
-                    <label>Description</label>
+                    <p class="title">Description</p>
+                    <p>A step-by-step guide to building web applications with Python and Django 2.1.</p>
                 </ul>
-                
-                    <textarea class="expand" placeholder="A step-by-step guide to building web applications with Python and Django 2.1."></textarea>
-                
-        
+                        
             </div>
 
             <div class="card-list">
                  <ul>
                  <h3> Images</h3> 
                  </ul>
-                 <ul>
-                    <label for="file-upload" class="custom-file">
-                    <i class="fas fa-upload"></i>
-                    Choose a file</label>
-                     <input type="file" id="file-upload" multiple>
-                </ul>
                 
                 <ul>
+                    <img  src="../assets/images/book.jpg">
                     <img  src="../assets/images/book.jpg">
                 </ul>
             </div>
@@ -107,65 +102,31 @@
                     <h3>Price</h3>
                 </ul>
 
-                <ul>
-                    <label>Price</label>
-                    </ul>
-                    <ul>
-                        $<input type="number"  value="99.99">USD
-                    </ul>
+                  <ul>
+                    <p class="title">Price</p>
+                    <p>$ 100.00</p>
+                </ul>
             </div>
         </div>
         <div class="endbar">
             <div class="endbar-item">
                <ul> <h3>Properties of </h3> </ul>
-               <ul>
-                    <label>Categories</label>
-                </ul>
-                <ul>
-                <select>
-                   <option value="">Books</option>
-                    <option value="">Electronics</option>
-                    <option value="">Apparell</option>
-                    <option value="">Books</option>
-                    <option value="">Groceries</option>
-                    <option value="">Accesories</option>
-                </select>
-                </ul>
-
-                <ul>
-                    <label>Quantity</label>
-                    </ul>
-                    <ul>
-                        <input type="number" value="1">Psc.
-                    </ul>
                  <ul>
-                    <label>Minimum Inventory</label>
-                    </ul>
-                    <ul>
-                        <input type="number" value="10">Psc.
-                    </ul>
-            </div>
-            <div class="endbar-item">
+                    <p class="title">Categories</p>
+                    <p>Books</p>
+                </ul>
 
                 <ul>
-                    <h3>Save Product</h3>
-                </ul>
-                <ul>
-                    <button class="cancel">cancel</button>
+                    <p class="title">Quantity</p>
+                    <p>2</p>
                 </ul>
 
                  <ul>
-                    <button class="Delete">Delete</button>
+                    <p class="title">Minimum Inventory</p>
+                    <p>100 Psc</p>
                 </ul>
-
-                <ul>
-                    <button class="save">Save Changes</button>
-                </ul>
-
-               
-
-            </form>
             </div>
+            
     </div>
     </div>
 
@@ -174,6 +135,16 @@
     </form>
     
 </body>
-<script src="../assets/js/app.js"> </script>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closenav()">&times;</a>
+ 
+  <a href="dashboard.html">Dashboard</a>
+  <a href="products.html">Products</a>
+  <a href="category.html">Categories</a>
+  <a href="sales.html">Sales</a>
+  <a href="userprofile.html">Profile</a>
+  <a href="users.html">Users</a>
+</div>
+<script src="../assets/js/app.js"> </script>>
 
 </html>

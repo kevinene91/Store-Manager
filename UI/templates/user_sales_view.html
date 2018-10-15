@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/styles.css">
-	<title>Store Manager | Sales </title>
+	<title>Store Manager | add-product </title>
 </head>
 
 <body>
@@ -32,10 +32,10 @@
        
     </nav>
 
-    <div class="container">
+    
+    <div class="card-container">
         <div class="sidebar">
-
-           <div class="side-item">
+        <div class="side-item">
                <a href="dashboard.html"><i class="fas fa-home fa-x"> <b>Dashboard</b></i></a>
             </div>
             <div class="side-item">
@@ -54,7 +54,7 @@
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
             <div class="side-item">
-               <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
+               <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Sales Record</b></i></a>
             </div>
             <div class="side-item">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
@@ -62,74 +62,76 @@
         </div>
         <div class="content-container">
             <div class="head-actions">
-            <h3> Sales </h3>
-            <a class="btn-left" href="sales_add.html"><button>
-                Add Sales
-            </button></a>
+            <div class="head-arrow">
+            <a href="sales_record.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
             </div>
-
+             <h3 class="head-left">Sale</h3>
+            </div>
+        
+            
             <div class="table-list">
                 <table>
-                    <ul></ul>
+                    <ul><h2>products</h2></ul>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Sales-ID</th>
-                            <th>Customer Name</th>
-                            <th>Attendant</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>view</th>
-                            <th>Delete</th>
-                             
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="detail">
-                            <td></td>
-                            <td>#1</td>
-                            <td>Daniel</td> 
-                            <td>Trevor</td>
-                            <td>13th October 2018 </td>
-                            <td>400.80</td>
-                            <td><a href="sale_view.html"><i class="fas fa-eye"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
-                            
+                            <td><img class="wrapper" src="../assets/images/book.jpg"></td>
+                            <td>Django, Third Edition by Vance Williams</td>
+                            <td>Education</td>
+                            <td>10</td> 
+                            <td>$39.99</td>
                         </tr>
-                        <tr>
-                             <td></td>
-                            <td>#2</td>
-                            <td>kevin</td> 
-                            <td>Trevor</td>
-                            <td>13th October 2018 </td>
-                            <td>1000.00</td>
-                            <td><a href="sale_view.html"><i class="fas fa-eye"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
+                         <tr class="detail">
+                            <td><img class="wrapper" src="../assets/images/book.jpg"></td>
+                            <td>Django, Third Edition by Vance Williams</td>
+                            <td>Education</td>
+                            <td>10</td> 
+                            <td>$39.99</td>
                         </tr>
-                        <tr>
-                           <td></td>
-                            <td>#3</td>
-                            <td>Jose</td> 
-                            <td>Smalling</td>
-                            <td>13th October 2018 </td>
-                            <td>120000.80</td>
-                            <td><a href="sale_view.html"><i class="fas fa-eye"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
-                        </tr>
-                      
                     </tbody>
+                    
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Total</td>
+                            <td>79.98</td>
+                        <tr>
+                    
                 </table>
-                <ul>
+            
+                 <ul>
                         <div class="tr">
                         <button><i class="fas fa-angle-left"></i></button>
                           <button><i class="fas fa-angle-right"></i></button>
                         </div>
-                </ul> 
+                </ul>          
             </div>
-        </div>
+        <div>
+        
+            <div class="table-list">
+                <div class="card">
+                <h3>Attendant</h3>
+                <p>Name: Pius</p>
 
-    </div>
-    
+                <h3>Customer</h3>
+                <p>Name: kevin</p>
+
+                 <h3>Date Recorded</h3>
+                <p>Date: 09/11/2018</p>
+                </div>
+            </div>
+            
+     
 </body>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closenav()">&times;</a>
@@ -143,4 +145,5 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+
 </html>

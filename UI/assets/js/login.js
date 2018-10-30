@@ -16,7 +16,7 @@ function loginFunction(e){
 	};
 
 	//  post the data to via fetch
-	fetch("https://store-manger.herokuapp.com/api/v2/auth/login",{
+	fetch("https://store-manger.herokuapp.com/api/v2/auth/login",{	
 	headers: {
 		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin':'*',
@@ -29,9 +29,24 @@ function loginFunction(e){
 	}).then(function(response){return response.json()})
 	.then(function(response){
 		localStorage.setItem('access_token', response.access_token)
-		if (response.message == "logged in"){
+		if (response.message === "logged in"){
 			// redirect to dashboard
 			window.location.href = 'UI/templates/dashboard.html'
 		}
+		else{
+			let notification = document.getElementById('error-message')
+			notification.innerHTML = `
+			<div id="error-message-item">
+			<h2>${response.message}</h2>
+			</div>`
+			;
+			setTimeout(()=> {
+				const message = "";
+				notification.innerHTML = message;
+			}, 8000)
+			
+
+		}
+
 	})
 }

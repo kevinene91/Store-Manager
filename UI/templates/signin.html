@@ -10,7 +10,9 @@
 
 <body>
 
-
+     <div id="error-message">
+          
+    </div>
 
     <div class="auth-container">
     <div class="option-menu">
@@ -20,25 +22,25 @@
             <ul><a href="signup.html"><button> REGISTER </button></a><ul>
 
         </div>
-      
-        <div class="form-container">
+           
+        <div class="form-container" id="login-form'">
             <ul><h2>Login</h2></ul>
-            <form action="dashboard.html">
+            <form>
             <ul>
             <label>email</label>
             </ul>
             <ul>
-            <input type="email" required>
+            <input type="email" id="email" required>
             </ul>
 
             <ul>
             <label>password</label>
             </ul>
             <ul>
-            <input type="password" required>
+            <input type="password" id="password" required>
             </ul>
             <ul>
-                <a href="products.html"><button>LOGIN</button></a>
+                <button id="submit">LOGIN</button>
             </ul>
             </form>
         </div>
@@ -46,4 +48,5 @@
     </div>
 
 </body>
+<script src="../assets/js/login.js"> </script>
 </html>

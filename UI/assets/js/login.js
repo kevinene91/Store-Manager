@@ -29,6 +29,7 @@ function loginFunction(e){
 	}).then(function(response){return response.json()})
 	.then(function(response){
 		localStorage.setItem('access_token', response.access_token)
+		localStorage.setItem('role', response.role)
 		if (response.message === "logged in"){
 			// redirect to dashboard
 			window.location.href = 'UI/templates/dashboard.html'
@@ -38,8 +39,7 @@ function loginFunction(e){
 			notification.innerHTML = `
 			<div id="error-message-item">
 			<h2>${response.message}</h2>
-			</div>`
-			;
+			</div>`;
 			setTimeout(()=> {
 				const message = "";
 				notification.innerHTML = message;

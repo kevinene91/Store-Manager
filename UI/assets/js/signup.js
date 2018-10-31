@@ -1,7 +1,8 @@
+// get signup button
 let submit = document.getElementById('submit')
 submit.addEventListener('click', signUp)
 
-
+//  the call back function for signup
 function signUp(e){
 	e.preventDefault()
 

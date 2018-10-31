@@ -648,8 +648,6 @@ input[type="file"] {
 }
 
 
-<<<<<<< HEAD
-=======
 .sidenav {
     height: 100%;
     width: 0;
@@ -708,7 +706,6 @@ input[type="file"] {
 }
 
 
->>>>>>> c95e22876332d71a5a1492d5ae44d2fa516c38f0
 @media only screen and (max-width: 768px) {
     .auth-container{
         grid-auto-columns: 25% 25%;

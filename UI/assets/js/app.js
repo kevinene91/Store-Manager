@@ -11,3 +11,10 @@ function resize() {
   }, 0);
 }
 
+function shownav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closenav() {
+  document.getElementById("mySidenav").style.width = "0";
+}

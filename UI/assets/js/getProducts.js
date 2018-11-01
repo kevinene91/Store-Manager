@@ -50,7 +50,6 @@ mode: "cors",
 		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
 		product_id = data[count]['product_id']
 
-
 		td_detail.innerHTML = `<i class="fas fa-eye"></i>`;
 		// console.log(edit[0])	
 		td_detail.addEventListener("click", function(e){

@@ -23,7 +23,7 @@ const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
 
 if (token === null){
-	window.location.href = "signin.html"
+	window.location.href = "../../index.html"
 }
 
 
@@ -53,7 +53,7 @@ fetch("https://store-manger.herokuapp.com/api/v2/auth/signup",{
 			</div>`
 			;
 			setTimeout(()=> {
-				const message = "";
+				let message = "";
 				notification.innerHTML = message;
 			}, 8000)
 			

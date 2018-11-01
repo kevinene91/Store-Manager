@@ -2,7 +2,7 @@
 let submit = document.getElementById('submit')
 submit.addEventListener('click', signUp)
 
-//  the call back function for signup
+//  the call back function for signUp
 function signUp(e){
 	e.preventDefault()
 

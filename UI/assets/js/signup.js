@@ -43,7 +43,7 @@ fetch("https://store-manger.herokuapp.com/api/v2/auth/signup",{
 	.then(function(response){
 		if (response.message === "registration sucessfull"){
 			// redirect to dashboard
-			window.location.href = 'dashboard.html'
+			window.location.href = '../../index.html'
 		}
 		else{
 			let notification = document.getElementById('error-message')

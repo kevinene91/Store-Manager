@@ -11,6 +11,7 @@ if (token === null){
 
 
 
+
 function searchProducts(e){
 	e.preventDefault()
 	let output = document.getElementById("search").value 
@@ -28,54 +29,94 @@ function searchProducts(e){
 .then(function(response){return response.json()})
 .then(function(data){
 
-	let ul = document.createElement('ul')
-		label = document.createElement('label')
-		input = document.createElement('input')
+	let product_ul = document.createElement('ul')
+		product_label = document.createElement('label')
+		product_input = document.createElement('input')
 
-		label.innerHTML = 'Product'
-		input.type = 
+		product_label.innerHTML = 'Product'
+		product_input.type = "text"
+		product_input.value = `${data['name']}`
+		product_ul.appendChild(product_label)
+		product_ul.appendChild(product_input)
 
-		console.log(label)
+
+	let quantity_ul = document.createElement('ul')
+		quantity_label = document.createElement('label')
+		quantity_input = document.createElement('input')
+		quantity_label.innerHTML = 'quantity'
+		quantity_input.type = "number"
+		quantity_input.id = 'quantityID'
+		quantity_ul.appendChild(quantity_label)
+		quantity_ul.appendChild(quantity_input)
 
 
+	let price_ul = document.createElement('ul')
+		price_label = document.createElement('label')
+		price_input = document.createElement('input')
+		price_label.innerHTML = 'Price'
+		price_input.type = "number"
+		price_input.value = `${data['price']}`
+		price_ul.appendChild(price_label)
+		price_ul.appendChild(price_input)
 
 
-	form.innerHTML = `<ul><label>Product <label> 
-                    <input type="text" value="${data['name']}">
-                    </ul>
+	
+	let customer_ul = document.createElement('ul')
+		customer_label = document.createElement('label')
+		customer_input = document.createElement('input')
+		customer_label.innerHTML = 'Customer'
+		customer_input.type = "text"
+		customer_input.id = 'nameID'
+		customer_ul.appendChild(customer_label)
+		customer_ul.appendChild(customer_input)
 
-                    <ul><label>Price<label> 
-                    ${data['price']}
-                    </ul>
-                  
-                    <ul>
-                    <label>Quantity</label>
-                    <input type="number" id="quantity">
-                    </ul>
+		console.log(customer_ul)
+	let button_ul = document.createElement('ul')
+		button = document.createElement('button')
+		button.className = 'save'
+		button.id = 'add'
+		button.innerHTML = 'Sell'
+		button_ul.appendChild(button)
 
-                     <ul>
-                    <label>Customer</label>
-                    <input type="text", id="name">
-                    </ul>
+	let space_ul = document.createElement('ul')
 
-                    <ul>
-                    <button class="save" id="add">Sell</button>
-                    <ul>`
 
-                     const addItem =  document.getElementById('add')
-                     const quantity = document.getElementById('quantity').value
-                     const name = document.getElementById("name").value
-                     console.log(name)
+	form.appendChild(product_ul)
+	form.appendChild(customer_ul)
+	form.appendChild(quantity_ul)
+	form.appendChild(product_ul)
+	form.appendChild(space_ul)
+	form.appendChild(button_ul)
 
-                     addItem.addEventListener('click', function(e){
+	var addItem =  document.getElementById('add')
+	var quantity = document.getElementById('quantityID')
+	var name = document.getElementById("nameID")
+
+	quantityValue = quantity.addEventListener('change',function(e){
+		value = event.target.value;
+		localStorage.setItem('quantity', value)
+	})
+
+
+	name.addEventListener('change',function(e){
+		value = event.target.value;
+		localStorage.setItem('name', value)
+	})
+
+	console.log(quantityValue)
+    addItem.addEventListener('click', function(e){
                      	e.preventDefault()
 
+					quantityValue = localStorage.getItem('quantity')
+					nameValue = localStorage.getItem('name')
+					console.log(quantityValue)
+
                      data = {
-                     	sale_items:[{product_id:data['product_id'], quantity:1}], 
-                     	customer: "kevin"
+                     	sale_items:[{product_id:data['product_id'], quantity:parseInt(quantityValue)}], 
+                     	customer: nameValue
                      }
 
-                     console.log(JSON.stringify(data))
+                     
 
                     fetch('https://store-manger.herokuapp.com/api/v2/sales',{
 				        headers:{
@@ -91,7 +132,28 @@ function searchProducts(e){
 					})
 					.then(function(response){return response.json()})
 					.then(function(response){
-						console.log(response)
+
+						if (response.message == undefined){
+			
+							response.message = " created"
+							setTimeout(()=> {
+								window.location.href = "products.html"
+							}, 3000)
+							
+						}
+				
+
+						let notification = document.getElementById('error-message')
+						notification.innerHTML = `
+						<div Id="error-message-item">
+						<h2>${response.message}</h2>
+						</div>`
+						;
+						setTimeout(()=> {
+							let message = "";
+							notification.innerHTML = message;
+						}, 3000)
+						
 
                      	})
                      })

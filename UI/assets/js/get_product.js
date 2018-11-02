@@ -1,8 +1,6 @@
 const product_form = document.getElementById('product_form')
 
-
 const data = JSON.parse(localStorage.getItem('product'))
-
 
 product_form.innerHTML= 
  `<div class="card-list">

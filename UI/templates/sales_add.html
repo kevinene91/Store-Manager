@@ -18,8 +18,8 @@
         </div>
         <form>
 
-        <input type="text" placeholder="Search for a product">
-        <button><img src="../assets/images/search.png"></button>
+        <input  id="search" type="text" placeholder="Search for a product">
+        <button id="sale"><img src="../assets/images/search.png"></button>
         </form>
 
         <div class="dropdown">
@@ -67,37 +67,18 @@
              <h3 class="head-left">New Sale</h3>
             </div>
 
-            <div class="sales-card-list">
+            <div class="sales-card-list" id="">
 
-                <form class="sale-form">
-                    <ul><label>sales No. <label> 
-                    <input type="text" value="100">
-                    </ul>
+                <form class="sale-form" id="sale-form">
 
-                    <ul><label>Datetime <label> 
-                    <input type="date">
-                    </ul>
-                  
-                    <ul>
-                    <label>Quantity</label>
-                    <input type="number">
-                    </ul>
-
-                     <ul>
-                    <label>Customer</label>
-                    <input type="text">
-                    </ul>
-
-                    <ul>
-                    <button class="save">Add Item</button>
-                    <ul>
+                
                 <form>                                                                                                                                                                      
             </div>
 
 
               <div class="sales-card-list">
 
-                <form class="sale-form">
+                <form class="sale-form" id="sale_list">
                     <table>
                         <tr>
                             <th></th>
@@ -109,24 +90,7 @@
                             <th>Action</th>
                         <tr>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td>#1</td>
-                                <td>Django Book</td>
-                                <td>4</td>
-                                <td>100</td>
-                                <td>400.00</td>
-                                <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>#2</td>
-                                <td>Shirt</td>
-                                <td>2</td>
-                                <td>600</td>
-                                <td>1200.00</td>
-                                <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
+                            
                         <tbody>
                     </table>
                     <hr>
@@ -151,4 +115,5 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/search.js"> </script>
 </html>

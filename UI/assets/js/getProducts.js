@@ -1,4 +1,5 @@
 
+
 let table_body = document.querySelector('tbody')
 
 
@@ -6,11 +7,11 @@ const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
 
 if (token === null){
-	window.location.href = "signin.html"
+	window.location.href = "../../index.html"
 }
 
-//  post the data to via fetch
-fetch("https://store-manger.herokuapp.com/api/v2/products",{	
+//  post the data to via fetchwi
+window.onload = fetch("https://store-manger.herokuapp.com/api/v2/products",{	
 headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',

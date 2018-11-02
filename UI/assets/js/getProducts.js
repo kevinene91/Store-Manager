@@ -44,6 +44,7 @@ mode: "cors",
 			td_detail = document.createElement('a')
 			td_det = document.createElement('td')
 
+		product_id = data[count]['product_id']
 		td_img.innerHTML = `<img class="wrapper" src="../assets/images/book.jpg">`
 		td_name.innerHTML = data[count]['name']
 		td_description.innerHTML = data[count]['description']
@@ -51,12 +52,14 @@ mode: "cors",
 		td_price.innerHTML = data[count]['price']
 		td_edit.innerHTML = `<a href="product_edit.html"><i class="fas fa-edit"></i></a>`
 		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
-		product_id = data[count]['product_id']
-		localStorage.setItem('product_id', product_id)
 
 		td_detail.innerHTML = `<i class="fas fa-eye"></i>`;
 		// console.log(edit[0])	
-		td_detail.addEventListener("click", redirectWindow)
+		td_detail.addEventListener("click", function (e){
+		e.preventDefault()
+		window.location.href="product_detail.html"
+		localStorage.setItem('product_id', product_id)
+		})
 			// localStorage.setItem(td_detail.href)
 			// window.location.href = "product_detail.ht"
 	
@@ -77,9 +80,4 @@ mode: "cors",
 	}
 })
 
-}
-
-function redirectWindow(e){
-	e.preventDefault()
-	window.location.href="product_detail.html"
 }

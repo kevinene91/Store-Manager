@@ -33,9 +33,9 @@ function searchProducts(e){
 		input = document.createElement('input')
 
 		label.innerHTML = 'Product'
-		input.innerHTML = `type="text" value="${data['name']"`
+		input.type = 
 
-		console.log(input)
+		console.log(label)
 
 
 
@@ -59,7 +59,7 @@ function searchProducts(e){
                     </ul>
 
                     <ul>
-                    <button class="save" id="add">Add Item</button>
+                    <button class="save" id="add">Sell</button>
                     <ul>`
 
                      const addItem =  document.getElementById('add')

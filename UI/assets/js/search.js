@@ -3,20 +3,19 @@ sale.addEventListener('click', searchProducts)
 
 const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
-
+let form = document.getElementById('sale-form')
 
 if (token === null){
 	window.location.href = "../../index.html"
 }
 
-
-
+window.onload = createForm(temp_data)
 
 function searchProducts(e){
+	
 	e.preventDefault()
 	let output = document.getElementById("search").value 
-	let form = document.getElementById('sale-form')
-	
+
 	fetch(`https://store-manger.herokuapp.com/api/v2/search/${output}`,{	
 	headers: {
 		'Content-Type': 'application/json',
@@ -29,6 +28,20 @@ function searchProducts(e){
 .then(function(response){return response.json()})
 .then(function(data){
 
+	window.stop();
+	window.onpopstate=  createForm(data)
+	var addItem =  document.getElementById('add')
+	addItem.addEventListener('click', postSales)
+	localStorage.setItem('product_id', data['product_id'])
+                     	
+  
+})
+}
+
+
+//  create form 
+function createForm(data){
+	console.log(data)
 	let product_ul = document.createElement('ul')
 		product_label = document.createElement('label')
 		product_input = document.createElement('input')
@@ -70,7 +83,6 @@ function searchProducts(e){
 		customer_ul.appendChild(customer_label)
 		customer_ul.appendChild(customer_input)
 
-		console.log(customer_ul)
 	let button_ul = document.createElement('ul')
 		button = document.createElement('button')
 		button.className = 'save'
@@ -80,15 +92,21 @@ function searchProducts(e){
 
 	let space_ul = document.createElement('ul')
 
+	if (form.innerHTML.length == 214){
+		form.appendChild(product_ul)
+		form.appendChild(customer_ul)
+		form.appendChild(quantity_ul)
+		form.appendChild(product_ul)
+		form.appendChild(space_ul)
+		form.appendChild(button_ul)
+		console.log(product_input.value)
+	}
+}
 
-	form.appendChild(product_ul)
-	form.appendChild(customer_ul)
-	form.appendChild(quantity_ul)
-	form.appendChild(product_ul)
-	form.appendChild(space_ul)
-	form.appendChild(button_ul)
+function postSales(e){
+	e.preventDefault()
 
-	var addItem =  document.getElementById('add')
+	
 	var quantity = document.getElementById('quantityID')
 	var name = document.getElementById("nameID")
 
@@ -103,61 +121,53 @@ function searchProducts(e){
 		localStorage.setItem('name', value)
 	})
 
-	console.log(quantityValue)
-    addItem.addEventListener('click', function(e){
-                     	e.preventDefault()
+		quantityValue = localStorage.getItem('quantity')
+		nameValue = localStorage.getItem('name')
+		product_id = localStorage.getItem('product_id')
 
-					quantityValue = localStorage.getItem('quantity')
-					nameValue = localStorage.getItem('name')
-					console.log(quantityValue)
+			data = {
+			sale_items:[{product_id:parseInt(product_id), quantity:parseInt(quantityValue)}], 
+			customer: nameValue
+			}
+			fetch('https://store-manger.herokuapp.com/api/v2/sales',{
+			headers:{
+			"Content-type":"application/json",
+			'Access-Control-Allow-Origin':'*',
+			'Access-Control-Request-Method': '*',
+			"Authorization": access_token
+		},
+		method:"POST",
+		mode:"cors",
+		body: JSON.stringify(data)
 
-                     data = {
-                     	sale_items:[{product_id:data['product_id'], quantity:parseInt(quantityValue)}], 
-                     	customer: nameValue
-                     }
+		})
+		.then(function(response){return response.json()})
+		.then(function(response){
 
-                     
+			if (response.message == undefined){
 
-                    fetch('https://store-manger.herokuapp.com/api/v2/sales',{
-				        headers:{
-						"Content-type":"application/json",
-						'Access-Control-Allow-Origin':'*',
-						'Access-Control-Request-Method': '*',
-						"Authorization": access_token
-					},
-					method:"POST",
-					mode:"cors",
-					body: JSON.stringify(data)
-
-					})
-					.then(function(response){return response.json()})
-					.then(function(response){
-
-						if (response.message == undefined){
-			
-							response.message = " created"
-							setTimeout(()=> {
-								window.location.href = "products.html"
-							}, 3000)
-							
-						}
+				response.message = "Sale created"
+				setTimeout(()=> {
+					window.location.href = "sale_view.html"
+				}, 3000)
 				
-
-						let notification = document.getElementById('error-message')
-						notification.innerHTML = `
-						<div Id="error-message-item">
-						<h2>${response.message}</h2>
-						</div>`
-						;
-						setTimeout(()=> {
-							let message = "";
-							notification.innerHTML = message;
-						}, 3000)
-						
-
-                     	})
-                     })
-
-                })
+			}
 	
+
+			let notification = document.getElementById('error-message')
+			notification.innerHTML = `
+			<div Id="error-message-item">
+			<h2>${response.message}</h2>
+			</div>`
+			;
+			setTimeout(()=> {
+				let message = "";
+				notification.innerHTML = message;
+			}, 3000)
+			
+			})
+
 }
+
+
+		

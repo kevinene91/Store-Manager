@@ -9,7 +9,7 @@ if (token === null){
 	window.location.href = "../../index.html"
 }
 
-window.onload = createForm(temp_data)
+
 
 function searchProducts(e){
 	
@@ -28,12 +28,27 @@ function searchProducts(e){
 .then(function(response){return response.json()})
 .then(function(data){
 
-	window.stop();
-	window.onpopstate=  createForm(data)
-	var addItem =  document.getElementById('add')
-	addItem.addEventListener('click', postSales)
-	localStorage.setItem('product_id', data['product_id'])
-                     	
+	if (data.message === undefined){
+		data.message = "add quantity"
+		createForm(data)
+		var addItem =  document.getElementById('add')
+		addItem.addEventListener('click', postSales)
+		localStorage.setItem('product_id', data['product_id'])
+	}
+
+	let notification = document.getElementById('error-message')
+		notification.innerHTML = `
+		<div Id="error-message-item">
+		<h2>${data.message}</h2>
+		</div>`
+		;
+		setTimeout(()=> {
+			let message = "";
+			notification.innerHTML = message;
+		}, 4000)
+	
+	
+	
   
 })
 }
@@ -148,12 +163,12 @@ function postSales(e){
 
 				response.message = "Sale created"
 				setTimeout(()=> {
-					window.location.href = "sale_view.html"
+					// window.location.href = "sale_view.html"
+
 				}, 3000)
 				
 			}
 	
-
 			let notification = document.getElementById('error-message')
 			notification.innerHTML = `
 			<div Id="error-message-item">
@@ -164,7 +179,16 @@ function postSales(e){
 				let message = "";
 				notification.innerHTML = message;
 			}, 3000)
+
+			data = response[0]
 			
+			tbody = document.getElementById('sale-detail')
+			tbody.innerHTML = `
+			<td></td>
+			<td>${data['sale_id']}</td>
+			<td>${data['attendant_email']}</td>
+			<td>${data['total']}</td>
+			`			
 			})
 
 }

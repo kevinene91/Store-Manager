@@ -52,6 +52,8 @@ window.onload = function getsingleProduct(){
                 </ul>
             </div>
             </div>
+            </div>
+            </div>
 
             <div class="endbar">
             <div class="endbar-item">

@@ -14,12 +14,11 @@ if (token === null){
 function postProducts(e){
 	e.preventDefault()
 
-	var name = document.getElementById("name").value
-	var description = document.getElementById("description").value 
-	var price = document.getElementById("price").value
-	var quantity = document.getElementById("quantity").value
-	var minimum_inventory = document.getElementById("minimum_inventory").value
-	var quantity = document.getElementById("quantity").value
+	let name = document.getElementById("name").value
+	let description = document.getElementById("description").value 
+	let price = document.getElementById("price").value
+	let quantity = document.getElementById("quantity").value
+	let minimum_inventory = document.getElementById("minimum_inventory").value
 
 const data = {
 	name:name,

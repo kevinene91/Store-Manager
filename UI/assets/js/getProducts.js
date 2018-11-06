@@ -2,7 +2,6 @@
 
 let table_body = document.querySelector('tbody')
 
-
 const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
 
@@ -10,6 +9,9 @@ if (token === null){
 	window.location.href = "../../index.html"
 }
 
+let saveBtn = document.getElementsByClassName('save')[0]
+let cancel = document.getElementsByClassName('cancel')[0]
+	
 //  post the data to via fetchwi
 
 window.onload = function allProducts(){
@@ -56,7 +58,8 @@ mode: "cors",
 		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
 		td_detail.innerHTML = `<i class="fas fa-eye"></i>`;
 		td_detail.id = data[count]['product_id']
-		td_delete.id = data[count]['product_id']
+		td_edit.id = data[count]['product_id']
+		saveBtn.id = data[count]['product_id']
 	
 		// console.log(edit[0])	
 		td_detail.addEventListener("click", function (e){
@@ -65,7 +68,7 @@ mode: "cors",
 		localStorage.setItem('product_id', this.id)
 		})
 
-		td_delete.addEventListener("click", modal)
+		td_delete.addEventListener("click", modalCall)
 	
 		td_det.appendChild(td_detail)
 		tr.appendChild(td_img)
@@ -83,17 +86,20 @@ mode: "cors",
 
 }
 
-function modal(){
-	
-	
-}
+
+let modal = document.getElementById('myModal');
+let btn = document.getElementById("myBtn");
+let span = document.getElementsByClassName("close")[0];
 
 
-function deleteProduct(e){
+function modalCall(e) {
 	e.preventDefault()
-    product_id = this.id
+    modal.style.display = "block";
+     
+      let product_id = this.id
 
-        fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{  
+        saveBtn.addEventListener('click', function(e){
+        fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin':'*',
@@ -101,7 +107,7 @@ function deleteProduct(e){
                 'Authorization': access_token
             },
             method:"delete",
-            mode: "cors",   
+            mode: "cors", 
             }).then(function(response){return response.json()})
             .then(function(response){
 				let notification = document.getElementById('error-message')
@@ -111,10 +117,63 @@ function deleteProduct(e){
 				</div>`
 				;
 				setTimeout(()=> {
+					modal.style.display = "none"
+				}, 2000)
+				setTimeout(()=> {
 					let message = "";
 					notification.innerHTML = message;
+					modal.style.display = "none"
 				}, 4000)
-				allProducts()
+
             })
+})
+       
+        cancel.addEventListener('click', function(e){
+        	e.preventDefault()
+			 modal.style.display = "none";        	
+
+        })
+    }
+
+
+span.onclick = function() {
+    modal.style.display = "none";
 }
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+
+}
+}
+
+// function deleteProduct(e){
+// 	e.preventDefault()
+//     product_id = this.id
+
+//         fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{  
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Access-Control-Allow-Origin':'*',
+//                 'Access-Control-Request-Method': '*',
+//                 'Authorization': access_token
+//             },
+//             method:"delete",
+//             mode: "cors",   
+//             }).then(function(response){return response.json()})
+//             .then(function(response){
+// 				let notification = document.getElementById('error-message')
+// 				notification.innerHTML = `
+// 				<div Id="error-message-item">
+// 				<h2>${response.message}</h2>
+// 				</div>`
+// 				;
+// 				setTimeout(()=> {
+// 					let message = "";
+// 					notification.innerHTML = message;
+// 				}, 4000)
+// 				allProducts()
+//             })
+// }
 

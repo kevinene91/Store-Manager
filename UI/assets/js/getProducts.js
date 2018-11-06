@@ -17,7 +17,7 @@ let cancel = document.getElementsByClassName('cancel')[0]
 window.onload = function allProducts(){
 
 
-fetch("https://store-manger.herokuapp.com/api/v2/products",{	
+fetch("https://store-manger.herokuapp.com/api/v2/products",{
 headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
@@ -67,6 +67,25 @@ mode: "cors",
 		window.location.href="product_detail.html"
 		localStorage.setItem('product_id', this.id)
 		})
+		td_edit.addEventListener("click", function (e){
+		e.preventDefault()
+		
+		product_id = this.id
+		fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{  
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Request-Method': '*',
+                'Authorization': access_token
+            },
+            method:"GET",
+            mode: "cors",   
+            }).then(function(response){return response.json()})
+            .then(function(data){
+            localStorage.setItem('product', JSON.stringify(data))
+            window.location.href="product_edit.html"
+		})
+           })
 
 		td_delete.addEventListener("click", modalCall)
 	
@@ -147,33 +166,3 @@ window.onclick = function(event) {
 
 }
 }
-
-// function deleteProduct(e){
-// 	e.preventDefault()
-//     product_id = this.id
-
-//         fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{  
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Access-Control-Allow-Origin':'*',
-//                 'Access-Control-Request-Method': '*',
-//                 'Authorization': access_token
-//             },
-//             method:"delete",
-//             mode: "cors",   
-//             }).then(function(response){return response.json()})
-//             .then(function(response){
-// 				let notification = document.getElementById('error-message')
-// 				notification.innerHTML = `
-// 				<div Id="error-message-item">
-// 				<h2>${response.message}</h2>
-// 				</div>`
-// 				;
-// 				setTimeout(()=> {
-// 					let message = "";
-// 					notification.innerHTML = message;
-// 				}, 4000)
-// 				allProducts()
-//             })
-// }
-

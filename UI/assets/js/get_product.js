@@ -6,6 +6,12 @@ if (token === null){
     window.location.href = "../../index.html"
 }
 
+let name = document.getElementById('name')
+    description = document.getElementById('description')
+    price = document.getElementById('price')
+    quantity = document.getElementById('quantity')
+    minimum = document.getElementById('minimum')
+
 
 window.onload = function getsingleProduct(){
     product_id = localStorage.getItem('product_id')
@@ -21,52 +27,13 @@ window.onload = function getsingleProduct(){
             mode: "cors",   
             }).then(function(response){return response.json()})
             .then(function(data){
-            console.log(data)
-            const product_form = document.getElementById('product_form')
-
-            product_form.innerHTML= 
-            `<div class="card-list">
-                <ul>
-                <h3> Information</h3> 
-                </ul>              
-                <ul>
-                    <p class="title">Name</p>
-                    <p id="name">${data['name']}</p>
-                </ul>  
-                
-                
-                <ul>
-                    <p class="title">Description</p>
-                    <p id="Description">${data['description']}</p>
-                </ul>
-                                    
-            </div>
-                    
-            <div class="card-list">
-                <ul>
-                    <h3>Price</h3>
-                </ul>
-                <ul>
-                    <p class="title">Price</p>
-                    <p>${data['price']}</p>
-                </ul>
-            </div>
-            </div>
-
-            <div class="endbar">
-            <div class="endbar-item">
-                <ul> <h3>Properties of </h3> </ul>
-                <ul>
-                    <p class="title">Quantity</p>
-                    <p>${data['quantity']}</p>
-                </ul>
-                <ul>
-                <p class="title">Minimum Inventory</p>
-                <p>${data['minimum_inventory']}</p>
-            </ul>
-            </div>     
-    </div>
-    </div>`;
+            
+            name.innerHTML = data['name']
+            description.innerHTML = data['description']
+            quantity.innerHTML = data['quantity']
+            minimum.innerHTML = data['minimum_inventory']
+            price.innerHTML = data['price']
+            
             })
 }
 

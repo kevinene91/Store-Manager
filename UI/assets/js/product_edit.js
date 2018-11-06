@@ -32,20 +32,18 @@ save.addEventListener('click', editProduct)
 
 function editProduct(e){
     e.preventDefault()
-    product = localStorage.getItem('product')
 
-const data = {
-    name:name.value,
-    description:description.value,
-    price:price.value,
-    quantity:quantity.value,
-    minimum_inventory: minimum_inventory.value
+    const data = {
+        name:name.value,
+        description:description.value,
+        price:price.value,
+        quantity:quantity.value,
+        minimum_inventory: minimum_inventory.value
+       }
 
-}
+    product_id = parseInt(product['product_id'])
 
-console.log(data)
     
-    product_id = localStorage.getItem('product_id')
 
         fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{
             headers: {

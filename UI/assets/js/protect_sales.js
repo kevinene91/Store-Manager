@@ -1,7 +1,6 @@
-const addProduct = document.getElementById('add_products')
+const addSale = document.getElementById('add_products')
 
-
-addProduct.addEventListener('click', protectAdd)
+addSale.addEventListener('click', protectAdd)
 
 function protectAdd(e){
 	e.preventDefault()

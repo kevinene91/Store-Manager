@@ -6,11 +6,17 @@ if (token === null){
     window.location.href = "../../index.html"
 }
 
+let detail = document.getElementById('detail')
+    total = document.getElementById('total')
+    attendant = document.getElementById('attendant')
+    customer = document.getElementById('customer')
+    date = document.getElementById('date')
+
 
 window.onload = function getsingleProduct(){
-    product_id = localStorage.getItem('product_id')
+    sale_id = localStorage.getItem('sale_id')
 
-        fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{  
+        fetch(`https://store-manger.herokuapp.com/api/v2/sales/${sale_id}`,{  
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin':'*',
@@ -22,53 +28,29 @@ window.onload = function getsingleProduct(){
             }).then(function(response){return response.json()})
             .then(function(data){
             console.log(data)
-            const product_form = document.getElementById('product_form')
+            sale = data['sale']
+            sale_items = data['sale_items']
+            sale_items.forEach(element => {
+                detail.innerHTML=
 
-            product_form.innerHTML= 
-            `<div class="card-list">
-                <ul>
-                <h3> Information</h3> 
-                </ul>              
-                <ul>
-                    <p class="title">Name</p>
-                    <p id="name">${data['name']}</p>
-                </ul>  
+                `
+                <td></td>
+                <td>${element['name']}</td>
+                <td>${element['quantity']}</td>
+                <td>${element['price']}</td>
                 
-                
-                <ul>
-                    <p class="title">Description</p>
-                    <p id="Description">${data['description']}</p>
-                </ul>
-                                    
-            </div>
-                    
-            <div class="card-list">
-                <ul>
-                    <h3>Price</h3>
-                </ul>
-                <ul>
-                    <p class="title">Price</p>
-                    <p>${data['price']}</p>
-                </ul>
-            </div>
-            </div>
-            </div>
-            </div>
-
-            <div class="endbar">
-            <div class="endbar-item">
-                <ul> <h3>Properties of </h3> </ul>
-                <ul>
-                    <p class="title">Quantity</p>
-                    <p>${data['quantity']}</p>
-                </ul>
-                <ul>
-                <p class="title">Minimum Inventory</p>
-                <p>${data['minimum_inventory']}</p>
-            </ul>
-            </div>     
-    </div>
-    </div>`;
+                `
+            total.innerHTML = `
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>${sale['total']}</td>
+            `
+            });
+            attendant.innerHTML = `Name : ${sale['attendant_email']}`
+            customer.innerHTML = `Name : ${sale['customer']}`
+            date.innerHTML = `Date : ${sale['created_at']}`
+            
             })
 }
 

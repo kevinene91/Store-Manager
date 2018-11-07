@@ -59,6 +59,7 @@ mode: "cors",
 		td_detail.innerHTML = `<i class="fas fa-eye"></i>`;
 		td_detail.id = data[count]['product_id']
 		td_edit.id = data[count]['product_id']
+		td_delete.id = data[count]['product_id']
 		saveBtn.id = data[count]['product_id']
 	
 		// console.log(edit[0])	
@@ -115,7 +116,8 @@ function modalCall(e) {
 	e.preventDefault()
     modal.style.display = "block";
      
-      let product_id = this.id
+    product_id = this.id
+      console.log(product_id)
 
         saveBtn.addEventListener('click', function(e){
         fetch(`https://store-manger.herokuapp.com/api/v2/products/${product_id}`,{

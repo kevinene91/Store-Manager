@@ -76,35 +76,18 @@
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Category</th>
                             <th>Quantity</th>
                             <th>Price</th>
                             
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="detail">
-                            <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                            <td>Django, Third Edition by Vance Williams</td>
-                            <td>Education</td>
-                            <td>10</td> 
-                            <td>$39.99</td>
-                        </tr>
-                         <tr class="detail">
-                            <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                            <td>Django, Third Edition by Vance Williams</td>
-                            <td>Education</td>
-                            <td>10</td> 
-                            <td>$39.99</td>
-                        </tr>
+                    <tbody id="detail">
+                       
+        
                     </tbody>
                     
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>Total</td>
-                            <td>79.98</td>
+                        <tr id="total">
+                           
                         <tr>
                     
                 </table>
@@ -121,13 +104,13 @@
             <div class="table-list">
                 <div class="card">
                 <h3>Attendant</h3>
-                <p>Name: Pius</p>
+                <p id="attendant"></p>
 
                 <h3>Customer</h3>
-                <p>Name: kevin</p>
+                <p id="customer"></p>
 
                  <h3>Date Recorded</h3>
-                <p>Date: 09/11/2018</p>
+                <p id ="date"></p>
                 </div>
             </div>
             
@@ -145,5 +128,7 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/get_sale.js"> </script>
+
 
 </html>

@@ -59,7 +59,11 @@
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
         </div>
+         
         <div class="content-container">
+            <div id="error-message">
+          
+            </div>
             <div class="head-actions">
             <div class="head-arrow">
             <a href="products.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
@@ -76,34 +80,18 @@
                     <label>Name</label>
                 </ul>
                 <ul>
-                    <input type="text" value="Django for beginners">
+                    <input type="text" id="name" value="Django for beginners">
                 </ul>
 
                  <ul>
                     <label>Description</label>
                 </ul>
                 
-                    <textarea class="expand" placeholder="A step-by-step guide to building web applications with Python and Django 2.1."></textarea>
+                    <textarea class="expand" id="description" placeholder="A step-by-step guide to building web applications with Python and Django 2.1."></textarea>
                 
         
             </div>
 
-            <div class="card-list">
-                 <ul>
-                 <h3> Images</h3> 
-                 </ul>
-                 <ul>
-                    <label for="file-upload" class="custom-file">
-                    <i class="fas fa-upload"></i>
-                    Choose a file</label>
-                     <input type="file" id="file-upload" multiple>
-                </ul>
-                
-                <ul>
-                    <img  src="../assets/images/book.jpg">
-                </ul>
-            </div>
-        
 
             <div class="card-list">
                 <ul>
@@ -114,38 +102,25 @@
                     <label>Price</label>
                     </ul>
                     <ul>
-                        $<input type="number"  value="99.99">USD
+                        $<input type="number"  id="price" value="99.99">USD
                     </ul>
             </div>
         </div>
         <div class="endbar">
             <div class="endbar-item">
                <ul> <h3>Properties of </h3> </ul>
-               <ul>
-                    <label>Categories</label>
-                </ul>
-                <ul>
-                <select>
-                   <option value="">Books</option>
-                    <option value="">Electronics</option>
-                    <option value="">Apparell</option>
-                    <option value="">Books</option>
-                    <option value="">Groceries</option>
-                    <option value="">Accesories</option>
-                </select>
-                </ul>
 
                 <ul>
                     <label>Quantity</label>
                     </ul>
                     <ul>
-                        <input type="number" value="1">Psc.
+                        <input id="quantity" type="number" value="1">Psc.
                     </ul>
                  <ul>
                     <label>Minimum Inventory</label>
                     </ul>
                     <ul>
-                        <input type="number" value="10">Psc.
+                        <input type="number" id="minimum_inventory" value="10">Psc.
                     </ul>
             </div>
             <div class="endbar-item">
@@ -157,12 +132,9 @@
                     <button class="cancel">cancel</button>
                 </ul>
 
-                 <ul>
-                    <button class="Delete">Delete</button>
-                </ul>
 
                 <ul>
-                    <button class="save">Save Changes</button>
+                    <button id="save" class="save">Save Changes</button>
                 </ul>
 
                
@@ -187,6 +159,7 @@
   <a href="userprofile.html">Profile</a>
   <a href="users.html">Users</a>
 </div>
-<script src="../assets/js/app.js"> </script>>
+<script src="../assets/js/app.js"> </script>
+<script src="../assets/js/product_edit.js"> </script>
 
 </html>

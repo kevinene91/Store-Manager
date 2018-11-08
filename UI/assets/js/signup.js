@@ -2,7 +2,7 @@
 let submit = document.getElementById('submit')
 submit.addEventListener('click', signUp)
 
-//  the call back function for signup
+//  the call back function for signUp
 function signUp(e){
 	e.preventDefault()
 
@@ -23,7 +23,7 @@ const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
 
 if (token === null){
-	window.location.href = "signin.html"
+	window.location.href = "../../index.html"
 }
 
 
@@ -43,7 +43,7 @@ fetch("https://store-manger.herokuapp.com/api/v2/auth/signup",{
 	.then(function(response){
 		if (response.message === "registration sucessfull"){
 			// redirect to dashboard
-			window.location.href = 'dashboard.html'
+			window.location.href = '../../index.html'
 		}
 		else{
 			let notification = document.getElementById('error-message')
@@ -53,7 +53,7 @@ fetch("https://store-manger.herokuapp.com/api/v2/auth/signup",{
 			</div>`
 			;
 			setTimeout(()=> {
-				const message = "";
+				let message = "";
 				notification.innerHTML = message;
 			}, 8000)
 			

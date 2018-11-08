@@ -14,12 +14,11 @@ if (token === null){
 function postProducts(e){
 	e.preventDefault()
 
-	var name = document.getElementById("name").value
-	var description = document.getElementById("description").value 
-	var price = document.getElementById("price").value
-	var quantity = document.getElementById("quantity").value
-	var minimum_inventory = document.getElementById("minimum_inventory").value
-	var quantity = document.getElementById("quantity").value
+	let name = document.getElementById("name").value
+	let description = document.getElementById("description").value 
+	let price = document.getElementById("price").value
+	let quantity = document.getElementById("quantity").value
+	let minimum_inventory = document.getElementById("minimum_inventory").value
 
 const data = {
 	name:name,
@@ -46,7 +45,14 @@ fetch("https://store-manger.herokuapp.com/api/v2/products",{
 	})
 	.then(function(response){return response.json()})
 	.then(function(response){
-		console.log(response)
+		if (response.message == undefined){
+			
+			response.message = "product created"
+			setTimeout(()=> {
+				window.location.href = "products.html"
+			}, 3000)
+			
+		}
 
 		let notification = document.getElementById('error-message')
 		notification.innerHTML = `
@@ -57,7 +63,7 @@ fetch("https://store-manger.herokuapp.com/api/v2/products",{
 		setTimeout(()=> {
 			let message = "";
 			notification.innerHTML = message;
-		}, 3000)
+		}, 4000)
 
 	})
 }

@@ -43,7 +43,7 @@ function loginFunction(e){
 			setTimeout(()=> {
 				const message = "";
 				notification.innerHTML = message;
-			}, 8000)
+			}, 3000)
 			
 
 		}

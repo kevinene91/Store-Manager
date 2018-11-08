@@ -65,16 +65,21 @@ function searchProducts(e){
 function addItemListToLocalStorage(e){
 	e.preventDefault()
 	product = localStorage.getItem('product')
-	localStorage.setItem('quantity', quantity.value)
+	quantityVal = quantity.value
+	
 	if (localStorage.getItem('items')===null){
 		let items = []
-	items.push(product)
+	product_to_update = JSON.parse(product)
+	product_to_update.product_quantity = quantityVal
+	
+	items.push(JSON.stringify(product_to_update))
 	localStorage.setItem('items', JSON.stringify(items));
 	}else{
 	   items = JSON.parse(localStorage.getItem('items')) ;
         //push new item 
-
-        items.push(product)
+		product_to_update = JSON.parse(product)
+		product_to_update.product_quantity = quantityVal
+        items.push(JSON.stringify(product_to_update))
 
 		localStorage.setItem('items', JSON.stringify(items)); 
 	}
@@ -107,9 +112,12 @@ items.forEach(elem => {
 });
 
 console.log(newItems.length)
-product_quantity = parseInt(localStorage.getItem('quantity'))
+
 newItems.forEach(item => {
-	let tr = document.createElement('tr')
+	 console.log(item)
+	let itemsvalue = parseInt(item['product_quantity'])
+		tr = document.createElement('tr')
+		tr.id = parseInt(item['product_id'])
 		td = document.createElement('td')
 		tdName = document.createElement('td')
 		tdprice = document. createElement('td')
@@ -118,9 +126,11 @@ newItems.forEach(item => {
 		td_delete = document.createElement('td')
 		tdName.innerHTML = `${item['name']}`
 		tdprice.innerHTML = `${item['price']}`
-		tdquantity.innerHTML = `${product_quantity}`
+		tdquantity.innerHTML = `${itemsvalue}`
 		tdId.innerHTML = `${item['product_id']}`
 		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
+		td_delete.id = parseInt(item['product_id'])
+		td_delete.addEventListener('click', deleteProductItem)
 
 	tr.appendChild(td)
 	tr.appendChild(tdId)
@@ -134,6 +144,19 @@ newItems.forEach(item => {
 
 });
 
+}
+
+function deleteProductItem(e){
+	e.preventDefault()
+	id = this.id
+	let items = JSON.parse(localStorage.getItem('items'));
+
+	items.forEach(function(item, index){
+		  items.splice(index, 1);
+	});
+	localStorage.setItem('items', JSON.stringify(items));
+
+	window.location.reload()
 }
 	
 

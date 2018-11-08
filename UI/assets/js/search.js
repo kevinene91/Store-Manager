@@ -9,6 +9,18 @@ if (token === null){
 	window.location.href = "../../index.html"
 }
 
+let name = document.getElementById('name')
+	quantity = document.getElementById('quantity')
+	customer = document.getElementById('customer')
+	addItem = document.getElementById('save')
+
+loadList()
+
+function loadList(){
+	let allItems = getListItemsInStorage()
+
+	prepoulateUI(allItems)
+}
 
 
 function searchProducts(e){
@@ -28,108 +40,115 @@ function searchProducts(e){
 .then(function(response){return response.json()})
 .then(function(data){
 
+	name.value = data['name']
+
 	if (data.message === undefined){
 		data.message = "add quantity"
-		createForm(data)
-		var addItem =  document.getElementById('add')
-		addItem.addEventListener('click', postSales)
-		localStorage.setItem('product_id', data['product_id'])
+		addItem.addEventListener('click', addItemListToLocalStorage)
+		localStorage.setItem('product', JSON.stringify(data))
 	}
 
 	let notification = document.getElementById('error-message')
 		notification.innerHTML = `
 		<div Id="error-message-item">
 		<h2>${data.message}</h2>
-		</div>`
-		;
+		</div>`; 
+
 		setTimeout(()=> {
 			let message = "";
 			notification.innerHTML = message;
 		}, 4000)
-	
-	
-	
-  
 })
 }
 
 
-//  create form 
-function createForm(data){
-	console.log(data)
-	let product_ul = document.createElement('ul')
-		product_label = document.createElement('label')
-		product_input = document.createElement('input')
+function addItemListToLocalStorage(e){
+	e.preventDefault()
+	product = localStorage.getItem('product')
+	localStorage.setItem('quantity', quantity.value)
+	if (localStorage.getItem('items')===null){
+		let items = []
+	items.push(product)
+	localStorage.setItem('items', JSON.stringify(items));
+	}else{
+	   items = JSON.parse(localStorage.getItem('items')) ;
+        //push new item 
 
-		product_label.innerHTML = 'Product'
-		product_input.type = "text"
-		product_input.value = `${data['name']}`
-		product_ul.appendChild(product_label)
-		product_ul.appendChild(product_input)
+        items.push(product)
 
-
-	let quantity_ul = document.createElement('ul')
-		quantity_label = document.createElement('label')
-		quantity_input = document.createElement('input')
-		quantity_label.innerHTML = 'quantity'
-		quantity_input.type = "number"
-		quantity_input.id = 'quantityID'
-		quantity_ul.appendChild(quantity_label)
-		quantity_ul.appendChild(quantity_input)
-
-
-	let price_ul = document.createElement('ul')
-		price_label = document.createElement('label')
-		price_input = document.createElement('input')
-		price_label.innerHTML = 'Price'
-		price_input.type = "number"
-		price_input.value = `${data['price']}`
-		price_ul.appendChild(price_label)
-		price_ul.appendChild(price_input)
-
-
-	
-	let customer_ul = document.createElement('ul')
-		customer_label = document.createElement('label')
-		customer_input = document.createElement('input')
-		customer_label.innerHTML = 'Customer'
-		customer_input.type = "text"
-		customer_input.id = 'nameID'
-		customer_ul.appendChild(customer_label)
-		customer_ul.appendChild(customer_input)
-
-	let button_ul = document.createElement('ul')
-		button = document.createElement('button')
-		button.className = 'save'
-		button.id = 'add'
-		button.innerHTML = 'Sell'
-		button_ul.appendChild(button)
-
-	let space_ul = document.createElement('ul')
-
-	if (form.innerHTML.length == 214){
-		form.appendChild(product_ul)
-		form.appendChild(customer_ul)
-		form.appendChild(quantity_ul)
-		form.appendChild(product_ul)
-		form.appendChild(space_ul)
-		form.appendChild(button_ul)
-		console.log(product_input.value)
+		localStorage.setItem('items', JSON.stringify(items)); 
 	}
+
+	window.location.reload()
+
 }
+
+function getListItemsInStorage(){
+	let items; 
+
+	if (localStorage.getItem('items')===null){
+	  items = [];
+
+
+	}else{
+	  items = JSON.parse(localStorage.getItem('items'));
+	}
+	return items
+}
+
+
+function prepoulateUI(items){
+	
+	tbody = document.getElementById('sale-detail')
+	let newItems = []
+items.forEach(elem => {
+	elem = JSON.parse(elem)
+	newItems.push(elem)
+});
+
+console.log(newItems.length)
+product_quantity = parseInt(localStorage.getItem('quantity'))
+newItems.forEach(item => {
+	let tr = document.createElement('tr')
+		td = document.createElement('td')
+		tdName = document.createElement('td')
+		tdprice = document. createElement('td')
+		tdId = document.createElement('td')
+		tdquantity = document.createElement('td')
+		td_delete = document.createElement('td')
+		tdName.innerHTML = `${item['name']}`
+		tdprice.innerHTML = `${item['price']}`
+		tdquantity.innerHTML = `${product_quantity}`
+		tdId.innerHTML = `${item['product_id']}`
+		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
+
+	tr.appendChild(td)
+	tr.appendChild(tdId)
+	tr.appendChild(tdName)
+	tr.appendChild(tdquantity)
+	tr.appendChild(tdprice)
+	tr.appendChild(td_delete)
+	tbody.appendChild(tr)
+	
+	
+
+});
+
+}
+	
+
 
 function postSales(e){
 	e.preventDefault()
 
-	
+	product = localStorage.getItem('product')
+	product_json = JSON.stringify(product)	
+
 	var quantity = document.getElementById('quantityID')
 	var name = document.getElementById("nameID")
 
-	quantityValue = quantity.addEventListener('change',function(e){
-		value = event.target.value;
-		localStorage.setItem('quantity', value)
-	})
-
+	quantity.value = product_json['quantity']
+	name.value = product_json['name']
 
 	name.addEventListener('change',function(e){
 		value = event.target.value;
@@ -180,15 +199,7 @@ function postSales(e){
 				notification.innerHTML = message;
 			}, 3000)
 
-			data = response[0]
 			
-			tbody = document.getElementById('sale-detail')
-			tbody.innerHTML = `
-			<td></td>
-			<td>${data['sale_id']}</td>
-			<td>${data['attendant_email']}</td>
-			<td>${data['total']}</td>
-			`			
 			})
 
 }

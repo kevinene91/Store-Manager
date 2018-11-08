@@ -145,6 +145,7 @@ function modalCall(e) {
 					notification.innerHTML = message;
 					modal.style.display = "none"
 				}, 4000)
+				window.location.reload()
 
             })
 })

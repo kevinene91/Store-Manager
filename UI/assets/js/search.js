@@ -13,6 +13,7 @@ let name = document.getElementById('name')
 	quantity = document.getElementById('quantity')
 	customer = document.getElementById('customer')
 	addItem = document.getElementById('save')
+	complete = document.getElementById('complete')
 
 loadList()
 
@@ -40,12 +41,13 @@ function searchProducts(e){
 .then(function(response){return response.json()})
 .then(function(data){
 
-	name.value = data['name']
+	
 
 	if (data.message === undefined){
 		data.message = "add quantity"
 		addItem.addEventListener('click', addItemListToLocalStorage)
 		localStorage.setItem('product', JSON.stringify(data))
+		name.value = data['name']
 	}
 
 	let notification = document.getElementById('error-message')
@@ -104,17 +106,16 @@ function getListItemsInStorage(){
 
 function prepoulateUI(items){
 	
-	tbody = document.getElementById('sale-detail')
-	let newItems = []
+tbody = document.getElementById('sale-detail')
+let newItems = []
 items.forEach(elem => {
 	elem = JSON.parse(elem)
 	newItems.push(elem)
 });
 
-console.log(newItems.length)
 
 newItems.forEach(item => {
-	 console.log(item)
+
 	let itemsvalue = parseInt(item['product_quantity'])
 		tr = document.createElement('tr')
 		tr.id = parseInt(item['product_id'])
@@ -158,33 +159,30 @@ function deleteProductItem(e){
 
 	window.location.reload()
 }
-	
 
+complete.addEventListener('click', postSales)
 
 function postSales(e){
 	e.preventDefault()
 
-	product = localStorage.getItem('product')
-	product_json = JSON.stringify(product)	
+	let allItems = getListItemsInStorage()
+		itemsList = []
+		sales = []
+	allItems.forEach(item =>{
+		new_item = JSON.parse(item)
+		itemsList.push(new_item)
+		console.log(new_item['product_id'])
+	});
 
-	var quantity = document.getElementById('quantityID')
-	var name = document.getElementById("nameID")
-
-	quantity.value = product_json['quantity']
-	name.value = product_json['name']
-
-	name.addEventListener('change',function(e){
-		value = event.target.value;
-		localStorage.setItem('name', value)
+	itemsList.forEach(sale =>{
+	
+		sale_item = {product_id: parseInt(sale['product_id']), quantity:parseInt(sale['product_quantity'])}
+		sales.push(sale_item)
 	})
 
-		quantityValue = localStorage.getItem('quantity')
-		nameValue = localStorage.getItem('name')
-		product_id = localStorage.getItem('product_id')
-
 			data = {
-			sale_items:[{product_id:parseInt(product_id), quantity:parseInt(quantityValue)}], 
-			customer: nameValue
+			sale_items:sales, 
+			customer: "kevin"
 			}
 			fetch('https://store-manger.herokuapp.com/api/v2/sales',{
 			headers:{
@@ -205,7 +203,10 @@ function postSales(e){
 
 				response.message = "Sale created"
 				setTimeout(()=> {
-					// window.location.href = "sale_view.html"
+					let sale_id = response[0]['sale_id']
+					localStorage.setItem('sale_id', sale_id)
+					localStorage.removeItem('items')
+					window.location.href = "sale_view.html"
 
 				}, 3000)
 				

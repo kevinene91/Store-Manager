@@ -31,15 +31,23 @@ window.onload = function getsingleProduct(){
             sale = data['sale']
             sale_items = data['sale_items']
             sale_items.forEach(element => {
-                detail.innerHTML=
+        
+        let tr = document.createElement('tr') 
+            td = document.createElement('td')
+            tdName = document.createElement('td')
+            tdprice = document. createElement('td')
+            tdquantity = document.createElement('td')
 
-                `
-                <td></td>
-                <td>${element['name']}</td>
-                <td>${element['quantity']}</td>
-                <td>${element['price']}</td>
-                
-                `
+            tdName.innerHTML = `${element['name']}`
+            tdprice.innerHTML = `${element['price']}`
+            tdquantity.innerHTML = `${element['quantity']}`
+            
+            tr.append(td)
+            tr.append(tdName)
+            tr.append(tdprice)
+            tr.append(tdquantity)
+            detail.append(tr)
+
             total.innerHTML = `
             <td></td>
             <td></td>

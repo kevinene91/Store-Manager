@@ -1,6 +1,7 @@
 
 const token = localStorage.getItem('access_token')
 const access_token = "Bearer " + token
+const role = localStorage.getItem("role")
 
 if (token === null){
     window.location.href = "../../index.html"
@@ -11,8 +12,14 @@ let detail = document.getElementById('detail')
     attendant = document.getElementById('attendant')
     customer = document.getElementById('customer')
     date = document.getElementById('date')
-
-
+    back = document.getElementById('back')
+back.addEventListener('click', function(e){
+        if (role == "attendant"){
+            window.location.href="sales_record.html"   
+        }else{
+            window.location.href = "sales.html"
+        }
+    })
 window.onload = function getsingleProduct(){
     sale_id = localStorage.getItem('sale_id')
 

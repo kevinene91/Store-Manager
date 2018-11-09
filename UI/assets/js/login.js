@@ -31,6 +31,7 @@ function loginFunction(e){
 		localStorage.setItem('access_token', response.access_token)
 		localStorage.setItem('role', response.role)
 		if (response.message === "logged in"){
+			localStorage.setItem('email', email)
 			// redirect to dashboard
 			window.location.href = 'UI/templates/dashboard.html'
 		}
@@ -44,8 +45,6 @@ function loginFunction(e){
 				const message = "";
 				notification.innerHTML = message;
 			}, 3000)
-			
-
 		}
 
 	})

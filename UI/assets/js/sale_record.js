@@ -8,8 +8,9 @@ if (token === null){
 	window.location.href = "../../index.html"
 }
 
-	email = localStorage.getItem('email') 
-//  post the data to via fetch
+
+
+email = localStorage.getItem('email') 
 window.onload = fetch(`https://store-manger.herokuapp.com/api/v2/sales/${email}`,{	
 headers: {
 	'Content-Type': 'application/json',

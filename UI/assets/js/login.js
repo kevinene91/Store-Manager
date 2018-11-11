@@ -1,16 +1,28 @@
 // get the button to submit the query 
-var submit = document.getElementById("submit")
+let submit = document.getElementById("submit")
 //  add eventListener on the button
 submit.addEventListener('click', loginFunction)
+
+let role = localStorage.getItem('role')
+let intro = document.getElementById('intro')
+let button = document.getElementById('button')
+
+if (role=="admin"){
+	intro.innerHTML = "Create an attendant account"	
+	button.innerHTML = `<a href="UI/templates/signup.html">
+	<button> REGISTER </button></a>`
+}else{
+	intro.innerHTML = "Welcome! Login to Continue"
+}
 
 // implement the call back function
 function loginFunction(e){
 	e.preventDefault()
-	var email = document.getElementById("email").value 
-	var password = document.getElementById("password").value
+	let email = document.getElementById("email").value 
+	let password = document.getElementById("password").value
 
 	//  the data to post 
-	var data = {
+	const data = {
 	email:email,
 	password:password,
 	};

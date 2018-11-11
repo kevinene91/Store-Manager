@@ -2,7 +2,6 @@
 let table_body = document.querySelector('tbody')
 
 
-
 if (token === null){
 	window.location.href = "../../index.html"
 }
@@ -11,7 +10,7 @@ let saveBtn = document.getElementsByClassName('save')[0]
 let cancel = document.getElementsByClassName('cancel')[0]
 
 //  post the data to via fetch
-window.onload = fetch("https://store-manger.herokuapp.com/api/v2/sales",{	
+window.onload = fetch("https://store-manger.herokuapp.com/api/v2/users",{	
 headers: {
 	'Content-Type': 'application/json',
 	'Access-Control-Allow-Origin':'*',
@@ -30,36 +29,28 @@ mode: "cors",
 		tr.classList.add("detail")
 
         let spacing_id = document.createElement('td')
-            td_id = document.createElement('td')
-			td_customer = document.createElement('td')
+			td_role = document.createElement('td')
 			td_attendant = document.createElement('td')
-			td_Total = document.createElement('td')
-			td_detail = document.createElement('td')
+			td_user = document.createElement('td')
 			td_delete = document.createElement('td')
 		
+        if (data[count]['role']== 1){
+            user_role = "Store attendant"
+        }else{
+            user_role = "Admin"
+        }
 
-		td_id.innerHTML = data[count]['sale_id']
-		td_customer.innerHTML = data[count]['customer']
-        td_Total.innerHTML = data[count]['total']
-        td_attendant.innerHTML = data[count]['attendant_email']
+		td_user.innerHTML = data[count]['name']
+        td_role.innerHTML = `${user_role}`
+        td_attendant.innerHTML = data[count]['email']
 		td_delete.innerHTML = `<i class="fas fa-trash-alt"></i>`
-		td_detail.innerHTML = `<i class="fas fa-eye"></i>`;
-		td_detail.id = data[count]['sale_id']
-		td_delete.id = data[count]['sale_id']
-		saveBtn.id = data[count]['sale_id']
-
-		td_detail.addEventListener("click", function (e){
-			e.preventDefault()
-			window.location.href="sale_view.html"
-			localStorage.setItem('sale_id', this.id)
-			})
+		td_delete.id = data[count]['user_id']
+		saveBtn.id = data[count]['user_id']
 		td_delete.addEventListener("click", modalCall)
         tr.appendChild(spacing_id)
-        tr.appendChild(td_id)
-		tr.appendChild(td_customer)
+		tr.appendChild(td_user)
 		tr.appendChild(td_attendant)
-		tr.appendChild(td_Total)	
-		tr.appendChild(td_detail)
+		tr.appendChild(td_role)	
 		tr.appendChild(td_delete)
 		table_body.appendChild(tr)
 
@@ -75,11 +66,12 @@ function modalCall(e) {
 	e.preventDefault()
     modal.style.display = "block";
      
-    sale_id = this.id
+    user_id = parseInt(this.id)
+
 
 
         saveBtn.addEventListener('click', function(e){
-        fetch(`https://store-manger.herokuapp.com/api/v2/sales/${sale_id}`,{
+        fetch(`https://store-manger.herokuapp.com/api/v2/users/${user_id}`,{
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin':'*',

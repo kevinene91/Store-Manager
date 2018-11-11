@@ -1,6 +1,5 @@
 
-const token = localStorage.getItem('access_token')
-const access_token = "Bearer " + token
+
 const role = localStorage.getItem("role")
 
 if (token === null){

@@ -1,8 +1,7 @@
 
 let table_body = document.querySelector('tbody')
 
-const token = localStorage.getItem('access_token')
-const access_token = "Bearer " + token
+
 
 if (token === null){
 	window.location.href = "../../index.html"

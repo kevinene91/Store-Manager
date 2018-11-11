@@ -1,8 +1,7 @@
 const sale = document.getElementById('sale')
 sale.addEventListener('click', searchProducts)
 
-const token = localStorage.getItem('access_token')
-const access_token = "Bearer " + token
+
 let form = document.getElementById('sale-form')
 
 if (token === null){

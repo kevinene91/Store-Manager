@@ -25,7 +25,7 @@
         <div class="dropdown">
             <img class="prof" src="../assets/images/prof.svg">
             <div class="dropdown-content">
-              <a href="signin.html">Logout</a>
+              <a href="../../index.html">Logout</a>
             
             </div>
           </div>
@@ -34,7 +34,7 @@
 
     <div class="container">
         <div class="sidebar">
-       <div class="side-item">
+            <div class="side-item">
                <a href="dashboard.html"><i class="fas fa-home fa-x"> <b>Dashboard</b></i></a>
             </div>
             <div class="side-item">
@@ -45,27 +45,39 @@
                <a href="category.html"> <i class="fas fa-briefcase fa-x"> <b>Categories</b></i></a>
             </div>
 
-            <div class="side-item">
+            <div class="side-item admin">
                <a href="sales.html"> <i class="far fa-money-bill-alt fa-x"> <b>Sales</b></i></a>
             </div>
+            <div class="side-item attendant">
+               <a href="sales_add.html"> <i class="far fa-money-bill-alt fa-x"> <b>Add Sales</b></i></a>
+            </div>
 
-            <div class="side-item">
+            <div class="side-item attendant">
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
-              <div class="side-item">
-               <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Sales Record</b></i></a>
+            <div class="side-item attendant">
+               <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
             </div>
-            <div class="side-item">
+            <div class="side-item admin">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
-        </div>
+    </div>
+    
+        
         <div class="content-container">
+              <div id="error-message">
+          
+            </div>
             <div class="head-actions">
+          
+           
             <h3> Products</h3>
-            <a class="btn-left" href="products_add.html"><button>
+
+            </div>
+            <a class="btn-left" id="add_products" href="products_add.html"><button>
                 Add Product
             </button></a>
-            </div>
+         
 
             <div class="table-list">
                 <table>
@@ -74,7 +86,7 @@
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Category</th>
+                            <th>Description</th>
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>View</th>
@@ -83,82 +95,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="detail">
-                            <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                            <td>Django, Third Edition by Vance Williams</td>
-                            <td>Education</td>
-                            <td>10</td> 
-                            <td>$ 39.99</td>
-                            <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>
-
-                            <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></td>
-
-                            <td><i class="fas fa-trash-alt"></i></td>
-                            
-                        </tr>
-                        <tr>
-                                <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                <td>Django, Third Edition by Vance Williams</td>
-                                <td>Education</td>
-                                <td>10</td> 
-                                <td>$ 39.99</td>
-                                <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>
-                                 <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></th>
-                                <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                    <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                    <td>Django, Third Edition by Vance Williams</td>
-                                    <td>Education</td>
-                                    <td>10</td> 
-                                    <td>$ 39.99</td>
-                                <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>                                
-                                 <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></th>
-                                 <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                    <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                    <td>Django, Third Edition by Vance Williams</td>
-                                    <td>Education</td>
-                                    <td>10</td> 
-                                    <td>$ 39.99</td>
-                                <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>                                
-                                 <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></td>
-                                 <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                    <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                    <td>Django, Third Edition by Vance Williams</td>
-                                    <td>Education</td>
-                                    <td>10</td> 
-                                    <td>$ 39.99</td>
-                                    <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>
-
-                                    <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></th>
-                                    <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                    <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                    <td>Django, Third Edition by Vance Williams</td>
-                                    <td>Education</td>
-                                    <td>10</td> 
-                                    <td>$ 39.99</td>
-                                    <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>
-
-                                    <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></td>
-                                    <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                    <td><img class="wrapper" src="../assets/images/book.jpg"></td>
-                                    <td>Django, Third Edition by Vance Williams</td>
-                                    <td>Education</td>
-                                    <td>10</td> 
-                                    <td>$ 39.99</td>
-                                    <td><a href="product_detail.html"><i class="fas fa-eye"></i></a></td>
-
-                                    <td><a href="product_detail.html"><i class="fas fa-edit"></i></a></td>
-                                    <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
+                        
                     </tbody>
                 </table>
                 <ul>
@@ -171,6 +108,17 @@
         </div>
 
     </div>
+ <!-- Create Modal  -->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+          <p>Are you sure you want to delete</p>
+          <button class="save">Yes</button> 
+          <button class="cancel">No</button>
+        </div> 
+      </div>
+
     
 </body>
 <div id="mySidenav" class="sidenav">
@@ -185,4 +133,6 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/protect_products.js"> </script>
+<script src="../assets/js/getProducts.js"> </script>
 </html>

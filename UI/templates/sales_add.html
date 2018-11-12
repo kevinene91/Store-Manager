@@ -18,14 +18,14 @@
         </div>
         <form>
 
-        <input type="text" placeholder="Search for a product">
-        <button><img src="../assets/images/search.png"></button>
+        <input  id="search" type="text" placeholder="Search for a product">
+        <button id="sale"><img src="../assets/images/search.png"></button>
         </form>
 
         <div class="dropdown">
             <img class="prof" src="../assets/images/prof.svg">
             <div class="dropdown-content">
-              <a href="signin.html">Logout</a>
+              <a href="../../index.html">Logout</a>
             
             </div>
           </div>
@@ -33,8 +33,8 @@
     </nav>
 
     <div class="container">
-        <div class="sidebar">
-        <div class="side-item">
+            <div class="sidebar">
+            <div class="side-item">
                <a href="dashboard.html"><i class="fas fa-home fa-x"> <b>Dashboard</b></i></a>
             </div>
             <div class="side-item">
@@ -45,94 +45,81 @@
                <a href="category.html"> <i class="fas fa-briefcase fa-x"> <b>Categories</b></i></a>
             </div>
 
-            <div class="side-item">
+            <div class="side-item admin">
                <a href="sales.html"> <i class="far fa-money-bill-alt fa-x"> <b>Sales</b></i></a>
             </div>
+            <div class="side-item attendant">
+               <a href="sales_add.html"> <i class="far fa-money-bill-alt fa-x"> <b>Add Sales</b></i></a>
+            </div>
 
-            <div class="side-item">
+            <div class="side-item attendant">
                <a href="userprofile.html"> <i class="fas fa-user"> <b>Profile</b></i></a>
             </div>
-              <div class="side-item">
+            <div class="side-item attendant">
                <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
             </div>
-            <div class="side-item">
+          
+         
+            <div class="side-item admin">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
-        </div>
+    </div>
+        <div>
         <div class="content-container">
+        <div id="error-message">
+          
+            </div>
             <div class="head-actions">
               <div class="head-arrow">
             <a href="sales.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
             </div>
              <h3 class="head-left">New Sale</h3>
             </div>
+            
 
-            <div class="sales-card-list">
+            <div class="sales-card-list" id="">
 
-                <form class="sale-form">
-                    <ul><label>sales No. <label> 
-                    <input type="text" value="100">
+                <form class="sale-form" id="sale-form">
+                             <ul><label>name <label> 
+                    <input id="name" type="text">
                     </ul>
 
-                    <ul><label>Datetime <label> 
-                    <input type="date">
-                    </ul>
-                  
+                
                     <ul>
                     <label>Quantity</label>
-                    <input type="number">
-                    </ul>
-
-                     <ul>
-                    <label>Customer</label>
-                    <input type="text">
+                    <input id ="quantity" type="number">
                     </ul>
 
                     <ul>
-                    <button class="save">Add Item</button>
+                    <button id="save" class="save">Add Item</button>
                     <ul>
+                
                 <form>                                                                                                                                                                      
             </div>
 
 
               <div class="sales-card-list">
 
-                <form class="sale-form">
+                <form class="sale-form" id="sale_list">
                     <table>
                         <tr>
                             <th></th>
                             <th>product ID</th>
                             <th>product Name</th>
                             <th>Quantity</th>
-                            <th>unit price</th>
-                            <th>Total</th>
+                            <th>Price</th>
                             <th>Action</th>
                         <tr>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>#1</td>
-                                <td>Django Book</td>
-                                <td>4</td>
-                                <td>100</td>
-                                <td>400.00</td>
-                                <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>#2</td>
-                                <td>Shirt</td>
-                                <td>2</td>
-                                <td>600</td>
-                                <td>1200.00</td>
-                                <td><i class="fas fa-trash-alt"></i></td>
-                            </tr>
+                        <tbody id="sale-detail">
+                            
                         <tbody>
                     </table>
+                    
                     <hr>
                     <ul>
-                     <button class="save-sale">complete Sale</button>
+                     <button id="complete" class="save-sale">complete Sale</button>
                     </ul>
+        
                     
                 <form>                                                                                                                                                                      
             </div>
@@ -151,4 +138,5 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/search.js"> </script>
 </html>

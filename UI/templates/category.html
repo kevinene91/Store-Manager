@@ -57,15 +57,17 @@
             </div>
             <div class="side-item attendant">
                <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
-            </div>  <div id="error-message">
-          
             </div>
+          
             <div class="side-item admin">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
     </div>
         <div>
         <div class="content-container">
+             <div id="error-message">
+          
+            </div>
             <div class="head-actions">
             <h3> Category </h3>
             <a class="btn-left" href="category_add.html"><button>Add Category </button></a>
@@ -87,28 +89,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="detail">
-                            <td></td>
-                            <td>Books</td>
-                            <td>10</td> 
-                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
-                            
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Education</td>
-                            <td>10</td> 
-                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Apparel</td>
-                            <td>10</td> 
-                            <td><a href="category_edit.html"><i class="fas fa-edit"></i></a></td>
-                            <td><i class="fas fa-trash-alt"></i></td>
-                        </tr>
+                        
                       
                     </tbody>
                 </table>
@@ -121,7 +102,16 @@
             
         </div>
 
-    
+     <!-- Create Modal  -->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+          <p>Are you sure you want to delete</p>
+          <button class="save">Yes</button> 
+          <button class="cancel">No</button>
+        </div> 
+      </div>
     
 </body>
 <div id="mySidenav" class="sidenav">
@@ -136,4 +126,6 @@
   <a href="users.html">Users</a>
 </div>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/getCategories.js"> </script>
+
 </html>

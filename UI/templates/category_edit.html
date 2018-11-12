@@ -58,15 +58,16 @@
             </div>
             <div class="side-item attendant">
                <a href="sales_record.html"> <i class="far fa-money-bill-alt fa-x"> <b>My Record</b></i></a>
-            </div>  <div id="error-message">
-          
-            </div>
+            </div> 
             <div class="side-item admin">
                <a href="users.html"> <i class="fas fa-users"> <b>Users</b></i></a>
             </div>
     </div>
         <div>
         <div class="content-container">
+         <div id="error-message">
+          
+            </div>
             <div class="head-actions">
               <div class="head-arrow">
             <a href="category.html"><button><i class="fas fa-arrow-left fa-2x"></i></button></a>
@@ -81,22 +82,23 @@
                     <label>Name</label>
                     </ul>
                     <ul>
-                    <input type="text" value="Books">
+                    <input type="text" id="name">
                     </ul>
                     <ul>
                     <label>Description</label>
                     </ul>
                     <ul>
-                    <textarea class="expand" placeholder="This Category all products that qualify as books inluding magazines and Journals"></textarea>
+                    <textarea class="expand" id="description"></textarea>
                     </ul>
             </div>
                 <hr>
-                    <button class="cancel">Cancel</button>
-                    <button class="save">Save</button> 
+                    <button id="cancel" class="cancel">Cancel</button>
+                    <button id="save" class="save">Save</button> 
             </form>                                                                                                                                                                                
             </div>
     </div>
     
 </body>
 <script src="../assets/js/app.js"> </script>
+<script src="../assets/js/category_edit.js"> </script>
 </html>

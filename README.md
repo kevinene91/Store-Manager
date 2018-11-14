@@ -24,7 +24,8 @@ Store Manager is an app which enbles a store owner to manage sales, inventory an
 - Allow the attendant to create a sale record 
 - Allow the attendant to view their profile 
 
-** How To test this ** 
+**How To test this ** 
+
 - visit github pages [link](https://kevinene91.github.io/Store-Manager/index.html)
 - use admin login info: email:`testadmin@gmail.com` password:`123456`
 - navigate the admin functions 
